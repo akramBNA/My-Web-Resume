@@ -7,6 +7,8 @@ import {
 } from '@angular/forms';
 import emailjs from '@emailjs/browser';
 import { environment } from '../../environments/environment.variables';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-contact-me',
@@ -44,19 +46,39 @@ export class ContactMeComponent {
           },
           environment.EMAILJS_PUBLIC_KEY,
         )
-        .then(
-          (result) => {
-            console.log('Email sent successfully:', result.text);
-            alert('Your message has been sent!');
-            this.contactForm.reset();
-          },
-          (error) => {
-            console.error('Error sending email:', error.text);
-            alert('Failed to send your message. Please try again later.');
-          },
-        );
+        .then(response => {
+          // console.log("Response: ", response);
+          Swal.fire({
+            title: 'Success!',
+            text: 'Your message has been sent.',
+            icon: 'success',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#3085d6'
+          }).then( confirm => {
+            if(confirm){
+              this.contactForm.reset();
+            }
+          });
+        })
+        .catch(error => {
+          // console.log("Response: ", error);
+          Swal.fire({
+            title: 'Error!',
+            text: 'There was an issue sending your message. Please try again later.',
+            icon: 'error',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#d33'
+          });
+        });
+        //this.contactForm.reset();
     } else {
-      alert('Please fill out all required fields.');
+      Swal.fire({
+        title: 'Validation Error',
+        text: 'Please fill in all fields correctly.',
+        icon: 'warning',
+        confirmButtonText: 'OK',
+        confirmButtonColor: '#f39c12'
+      });
     }
   }
 }
