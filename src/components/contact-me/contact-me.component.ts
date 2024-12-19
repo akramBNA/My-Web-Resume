@@ -33,8 +33,8 @@ export class ContactMeComponent {
       const form = this.contactForm.value;
       emailjs
         .send(
-          environment.EMAILJS_SERVICE_ID, // Replace with your EmailJS Service ID
-          environment.EMAILJS_TEMPLATE_ID, // Replace with your EmailJS Template ID
+          environment.EMAILJS_SERVICE_ID,
+          environment.EMAILJS_TEMPLATE_ID,
           {
             firstName: form.firstName,
             lastName: form.lastName,
@@ -42,7 +42,7 @@ export class ContactMeComponent {
             email: form.email,
             message: form.message,
           },
-          environment.EMAILJS_PUBLIC_KEY, // Replace with your EmailJS Public Key
+          environment.EMAILJS_PUBLIC_KEY,
         )
         .then(
           (result) => {
