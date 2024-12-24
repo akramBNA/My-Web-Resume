@@ -20,7 +20,3 @@ angular
 node
 tailwind CSS
 chartJS ...
-
-## TEST SALWA
-
-test test
