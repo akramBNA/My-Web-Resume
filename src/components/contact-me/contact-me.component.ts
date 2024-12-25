@@ -60,12 +60,11 @@ export class ContactMeComponent {
           }).then((confirm) => {
             if (confirm) {
               this.contactForm.reset();
+              this.sendAutoReply();
             }
           });
         })
-        .catch((error) => {
-          console.log("the error ------> ", error);
-          
+        .catch((error) => {          
           this.isLoading = false; // Stop loading
           Swal.fire({
             title: 'Error!',
@@ -83,5 +82,23 @@ export class ContactMeComponent {
         confirmButtonColor: '#f39c12',
       });
     }
+  }
+
+  sendAutoReply(){
+    const form = this.contactForm.value;
+    emailjs.send(
+      environment.EMAILJS_SERVICE_ID,
+      environment.EMAILJS_AUTO_REPLY_TEMPLATE_ID,
+      {
+        firstName: form.firstName,
+        lastName: form.lastName,
+        email: form.email,
+      },
+      environment.EMAILJS_PUBLIC_KEY
+    ).then( sendAutoReply => {
+      console.log("auto reply sent successfully !");
+    }).catch( error => {
+      console.log("auto replay not sent! ", error);
+    });
   }
 }
