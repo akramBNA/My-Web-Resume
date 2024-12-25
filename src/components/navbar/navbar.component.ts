@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+import { ViewportScroller } from '@angular/common';
+
 import { NgIf } from '@angular/common';
 
 @Component({
@@ -29,5 +32,16 @@ export class NavbarComponent {
     link.click();
 
     document.body.removeChild(link);
+  }
+
+  constructor(private router: Router, private viewportScroller: ViewportScroller) {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        const fragment = this.router.parseUrl(this.router.url).fragment;
+        if (fragment) {
+          this.viewportScroller.scrollToAnchor(fragment);
+        }
+      }
+    });
   }
 }
