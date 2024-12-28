@@ -6,6 +6,8 @@
 /out-tsc
 /bazel-out
 .env
+src/environments/environment.variables.ts
+
 
 # Node
 /node_modules
