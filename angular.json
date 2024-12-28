@@ -41,7 +41,6 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "scripts": ["node -r dotenv/config"],
               "budgets": [
                 {
                   "type": "initial",
