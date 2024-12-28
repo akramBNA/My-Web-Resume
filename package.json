@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "node load-env.js && ng serve",
+    "build": "node load.env.js && ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "prestart": "node load-env.js",
@@ -13,6 +13,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^18.2.0",
+    "@angular/cdk": "^19.0.4",
     "@angular/common": "^18.2.0",
     "@angular/compiler": "^18.2.0",
     "@angular/core": "^18.2.0",
