@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
-import { ViewportScroller } from '@angular/common';
+// import { Router, NavigationEnd } from '@angular/router';
+// import { ViewportScroller } from '@angular/common';
 
 import { NgIf } from '@angular/common';
 
@@ -11,34 +11,24 @@ import { NgIf } from '@angular/common';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
 })
+
 export class NavbarComponent {
-  isMenuOpen: boolean = false;
-  
+  isMenuOpen = false;
+
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
-  downloadResume(): void {
-    console.log('Download function triggered');
-
-    const pdfUrl = 'assets/my-resume.pdf';
-    const pdfName = 'Akram-resume.pdf';
-
-    const link = document.createElement('a');
-    link.href = pdfUrl;
-    link.download = pdfName;
-
-    document.body.appendChild(link);
-    link.click();
-
-    document.body.removeChild(link);
-  }
-
-  scrollTo(section: string) {
-    const element = document.getElementById(section);
+  scrollToAndCloseMenu(sectionId: string) {
+    const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const navbarHeight = document.querySelector('nav')?.clientHeight || 0;
+      window.scrollTo({
+        top: element.offsetTop - navbarHeight,
+        behavior: 'smooth',
+      });
     }
+    this.isMenuOpen = false;
   }
-  
 }
+
