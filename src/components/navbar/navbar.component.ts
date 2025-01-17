@@ -34,17 +34,6 @@ export class NavbarComponent {
     document.body.removeChild(link);
   }
 
-  // constructor(private router: Router, private viewportScroller: ViewportScroller) {
-  //   this.router.events.subscribe((event) => {
-  //     if (event instanceof NavigationEnd) {
-  //       const fragment = this.router.parseUrl(this.router.url).fragment;
-  //       if (fragment) {
-  //         this.viewportScroller.scrollToAnchor(fragment);
-  //       }
-  //     }
-  //   });
-  // }
-
   scrollTo(section: string) {
     const element = document.getElementById(section);
     if (element) {

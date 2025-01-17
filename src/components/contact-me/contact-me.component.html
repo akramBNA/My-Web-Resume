@@ -1,5 +1,4 @@
 <div id="contact-me" class="isolate bg-white px-6 py-24 sm:py-32 lg:px-8 relative">
-
   <div *ngIf="isLoading" class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 z-1000">
     <mat-spinner></mat-spinner>
   </div>
@@ -21,6 +20,10 @@
               placeholder="Your First Name"
             />
           </div>
+          <div *ngIf="contactForm.get('firstName')?.touched && contactForm.get('firstName')?.invalid" class="text-red-500 text-sm mt-2">
+            <span *ngIf="contactForm.get('firstName')?.errors?.['required']">First Name is required.</span>
+            <span *ngIf="contactForm.get('firstName')?.errors?.['minlength']">First Name must be at least 2 characters long.</span>
+          </div>
         </div>
         <div>
           <label for="lastName" class="block text-sm/6 font-semibold text-gray-900">Last name</label>
@@ -32,6 +35,10 @@
               class="block w-full rounded-md border border-gray-300 bg-white px-3.5 py-2 text-base text-gray-900"
               placeholder="Your Last Name"
             />
+          </div>
+          <div *ngIf="contactForm.get('lastName')?.touched && contactForm.get('lastName')?.invalid" class="text-red-500 text-sm mt-2">
+            <span *ngIf="contactForm.get('lastName')?.errors?.['required']">Last Name is required.</span>
+            <span *ngIf="contactForm.get('lastName')?.errors?.['minlength']">Last Name must be at least 2 characters long.</span>
           </div>
         </div>
         <div class="sm:col-span-2">
@@ -45,6 +52,10 @@
               placeholder="Subject"
             />
           </div>
+          <div *ngIf="contactForm.get('subject')?.touched && contactForm.get('subject')?.invalid" class="text-red-500 text-sm mt-2">
+            <span *ngIf="contactForm.get('subject')?.errors?.['required']">Subject is required.</span>
+            <span *ngIf="contactForm.get('subject')?.errors?.['maxlength']">Subject cannot exceed 100 characters.</span>
+          </div>
         </div>
         <div class="sm:col-span-2">
           <label for="email" class="block text-sm/6 font-semibold text-gray-900">Email</label>
@@ -56,6 +67,10 @@
               class="block w-full rounded-md border border-gray-300 bg-white px-3.5 py-2 text-base text-gray-900"
               placeholder="Your Email"
             />
+          </div>
+          <div *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid" class="text-red-500 text-sm mt-2">
+            <span *ngIf="contactForm.get('email')?.errors?.['required']">Email is required.</span>
+            <span *ngIf="contactForm.get('email')?.errors?.['email']">Please enter a valid email address.</span>
           </div>
         </div>
         <div class="sm:col-span-2">
@@ -69,6 +84,10 @@
               placeholder="Your Message"
             ></textarea>
           </div>
+          <div *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid" class="text-red-500 text-sm mt-2">
+            <span *ngIf="contactForm.get('message')?.errors?.['required']">Message is required.</span>
+            <span *ngIf="contactForm.get('message')?.errors?.['minlength']">Message must be at least 10 characters long.</span>
+          </div>
         </div>
       </div>
       <div class="mt-10">
@@ -79,3 +98,5 @@
     </form>
   </div>
 </div>
+
+
