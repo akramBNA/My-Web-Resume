@@ -2,20 +2,20 @@
   <div class="container mx-auto flex items-center justify-between px-4 py-2">
     <div class="flex items-center">
       <img
-      class="h-8 w-8 rounded-full"
-      src="assets/profile_picture.jpeg"
-      alt="Logo"
+        class="h-8 w-8 rounded-full"
+        src="assets/profile_picture.jpeg"
+        alt="Logo"
       />    
     </div>
 
     <div class="hidden md:flex space-x-6">
-      <a (click)="scrollTo('about')" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">About</a>
-      <a (click)="scrollTo('contact-details')" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Contact details</a>
-      <a (click)="scrollTo('experience')" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Experience</a>
-      <a (click)="scrollTo('skills')" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Skills</a>
-      <a (click)="scrollTo('education')" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Education</a>
-      <a (click)="scrollTo('languages')" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Languages</a>
-      <a (click)="scrollTo('contact-me')" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Contact</a>
+      <a (click)="scrollToAndCloseMenu('about')" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">About</a>
+      <a (click)="scrollToAndCloseMenu('contact-details')" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Contact details</a>
+      <a (click)="scrollToAndCloseMenu('experience')" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Experience</a>
+      <a (click)="scrollToAndCloseMenu('skills')" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Skills</a>
+      <a (click)="scrollToAndCloseMenu('education')" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Education</a>
+      <a (click)="scrollToAndCloseMenu('languages')" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Languages</a>
+      <a (click)="scrollToAndCloseMenu('contact-me')" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Contact</a>
     </div>
 
     <div class="hidden md:block">
@@ -56,13 +56,13 @@
 
   <div *ngIf="isMenuOpen" class="md:hidden bg-gray-700">
     <div class="space-y-1 px-2 py-3">
-      <a (click)="scrollTo('about')" class="block text-gray-300 hover:bg-gray-600 hover:text-white px-3 py-2 text-base font-medium">About</a>
-      <a (click)="scrollTo('contact-details')" class="block text-gray-300 hover:bg-gray-600 hover:text-white px-3 py-2 text-base font-medium">Contact details</a>
-      <a (click)="scrollTo('experience')" class="block text-gray-300 hover:bg-gray-600 hover:text-white px-3 py-2 text-base font-medium">Experience</a>
-      <a (click)="scrollTo('skills')" class="block text-gray-300 hover:bg-gray-600 hover:text-white px-3 py-2 text-base font-medium">Skills</a>
-      <a (click)="scrollTo('education')" class="block text-gray-300 hover:bg-gray-600 hover:text-white px-3 py-2 text-base font-medium">Education</a>
-      <a (click)="scrollTo('languages')" class="block text-gray-300 hover:bg-gray-600 hover:text-white px-3 py-2 text-base font-medium">Languages</a>
-      <a (click)="scrollTo('contact-me')" class="block text-gray-300 hover:bg-gray-600 hover:text-white px-3 py-2 text-base font-medium">Contact</a>
+      <a (click)="scrollToAndCloseMenu('about')" class="block text-gray-300 hover:bg-gray-600 hover:text-white px-3 py-2 text-base font-medium">About</a>
+      <a (click)="scrollToAndCloseMenu('contact-details')" class="block text-gray-300 hover:bg-gray-600 hover:text-white px-3 py-2 text-base font-medium">Contact details</a>
+      <a (click)="scrollToAndCloseMenu('experience')" class="block text-gray-300 hover:bg-gray-600 hover:text-white px-3 py-2 text-base font-medium">Experience</a>
+      <a (click)="scrollToAndCloseMenu('skills')" class="block text-gray-300 hover:bg-gray-600 hover:text-white px-3 py-2 text-base font-medium">Skills</a>
+      <a (click)="scrollToAndCloseMenu('education')" class="block text-gray-300 hover:bg-gray-600 hover:text-white px-3 py-2 text-base font-medium">Education</a>
+      <a (click)="scrollToAndCloseMenu('languages')" class="block text-gray-300 hover:bg-gray-600 hover:text-white px-3 py-2 text-base font-medium">Languages</a>
+      <a (click)="scrollToAndCloseMenu('contact-me')" class="block text-gray-300 hover:bg-gray-600 hover:text-white px-3 py-2 text-base font-medium">Contact</a>
 
       <a
         href="assets/my-resume.pdf"
@@ -74,4 +74,3 @@
     </div>
   </div>
 </nav>
-
