@@ -7,3 +7,15 @@
 <app-languages></app-languages>
 <app-contact-me></app-contact-me>
 <app-footer></app-footer>
+
+<div
+  id="scrollToTop"
+  class="fixed bottom-4 right-4 p-2 bg-dark-olive text-white border border-white shadow-lg cursor-pointer z-50"
+  (click)="scrollToTop()"
+  *ngIf="showScrollToTop"
+  title="Scroll to Top"
+>
+  <i class="fas fa-arrow-up"></i>
+</div>
+
+

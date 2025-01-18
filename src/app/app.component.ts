@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-// import { RouterOutlet } from '@angular/router';
+import { Component, HostListener } from '@angular/core';
+import { NgIf } from '@angular/common';
 import { NavbarComponent } from '../components/navbar/navbar.component';
 import { FooterComponent } from '../components/footer/footer.component';
 import { ContactMeComponent } from '../components/contact-me/contact-me.component';
@@ -14,7 +14,7 @@ import { ContactDetailsComponent } from '../components/contact-details/contact-d
   selector: 'app-root',
   standalone: true,
   imports: [
-    // RouterOutlet,
+    NgIf,
     NavbarComponent,
     FooterComponent,
     ContactMeComponent,
@@ -23,11 +23,23 @@ import { ContactDetailsComponent } from '../components/contact-details/contact-d
     EducationComponent,
     ExperienceComponent,
     LanguagesComponent,
-    ContactDetailsComponent
+    ContactDetailsComponent,
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'my-web-resume';
+  showScrollToTop = false;
+
+  @HostListener('window:scroll', [])
+  onScroll(): void {
+    const scrollPosition = window.scrollY || document.documentElement.scrollTop || 0;
+    this.showScrollToTop = scrollPosition > 200;
+    console.log('Scroll position:', scrollPosition);
+  }
+
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }
