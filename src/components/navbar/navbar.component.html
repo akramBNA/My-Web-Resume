@@ -5,17 +5,31 @@
         class="h-8 w-8 rounded-full"
         src="assets/profile_picture.jpeg"
         alt="Logo"
-      />    
+      />
     </div>
 
     <div class="hidden md:flex space-x-6">
-      <a (click)="scrollToAndCloseMenu('about')" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">About</a>
-      <a (click)="scrollToAndCloseMenu('contact-details')" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Contact details</a>
-      <a (click)="scrollToAndCloseMenu('experience')" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Experience</a>
-      <a (click)="scrollToAndCloseMenu('skills')" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Skills</a>
-      <a (click)="scrollToAndCloseMenu('education')" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Education</a>
-      <a (click)="scrollToAndCloseMenu('languages')" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Languages</a>
-      <a (click)="scrollToAndCloseMenu('contact-me')" class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Contact</a>
+      <button (click)="scrollToAndCloseMenu('about')" class="inline-flex items-center text-gray-300 bg-transparent px-4 py-2 rounded-md hover:bg-gray-700 hover:text-white text-sm font-medium transition">
+        About
+      </button>
+      <button (click)="scrollToAndCloseMenu('contact-details')" class="inline-flex items-center text-gray-300 bg-transparent px-4 py-2 rounded-md hover:bg-gray-700 hover:text-white text-sm font-medium transition">
+        Contact details
+      </button>
+      <button (click)="scrollToAndCloseMenu('experience')" class="inline-flex items-center text-gray-300 bg-transparent px-4 py-2 rounded-md hover:bg-gray-700 hover:text-white text-sm font-medium transition">
+        Experience
+      </button>
+      <button (click)="scrollToAndCloseMenu('skills')" class="inline-flex items-center text-gray-300 bg-transparent px-4 py-2 rounded-md hover:bg-gray-700 hover:text-white text-sm font-medium transition">
+        Skills
+      </button>
+      <button (click)="scrollToAndCloseMenu('education')" class="inline-flex items-center text-gray-300 bg-transparent px-4 py-2 rounded-md hover:bg-gray-700 hover:text-white text-sm font-medium transition">
+        Education
+      </button>
+      <button (click)="scrollToAndCloseMenu('languages')" class="inline-flex items-center text-gray-300 bg-transparent px-4 py-2 rounded-md hover:bg-gray-700 hover:text-white text-sm font-medium transition">
+        Languages
+      </button>
+      <button (click)="scrollToAndCloseMenu('contact-me')" class="inline-flex items-center text-gray-300 bg-transparent px-4 py-2 rounded-md hover:bg-gray-700 hover:text-white text-sm font-medium transition">
+        Contact
+      </button>
     </div>
 
     <div class="hidden md:block">
@@ -56,18 +70,32 @@
 
   <div *ngIf="isMenuOpen" class="md:hidden bg-gray-700">
     <div class="space-y-1 px-2 py-3">
-      <a (click)="scrollToAndCloseMenu('about')" class="block text-gray-300 hover:bg-gray-600 hover:text-white px-3 py-2 text-base font-medium">About</a>
-      <a (click)="scrollToAndCloseMenu('contact-details')" class="block text-gray-300 hover:bg-gray-600 hover:text-white px-3 py-2 text-base font-medium">Contact details</a>
-      <a (click)="scrollToAndCloseMenu('experience')" class="block text-gray-300 hover:bg-gray-600 hover:text-white px-3 py-2 text-base font-medium">Experience</a>
-      <a (click)="scrollToAndCloseMenu('skills')" class="block text-gray-300 hover:bg-gray-600 hover:text-white px-3 py-2 text-base font-medium">Skills</a>
-      <a (click)="scrollToAndCloseMenu('education')" class="block text-gray-300 hover:bg-gray-600 hover:text-white px-3 py-2 text-base font-medium">Education</a>
-      <a (click)="scrollToAndCloseMenu('languages')" class="block text-gray-300 hover:bg-gray-600 hover:text-white px-3 py-2 text-base font-medium">Languages</a>
-      <a (click)="scrollToAndCloseMenu('contact-me')" class="block text-gray-300 hover:bg-gray-600 hover:text-white px-3 py-2 text-base font-medium">Contact</a>
+      <button (click)="scrollToAndCloseMenu('about')" class="block w-full text-left text-gray-300 bg-transparent px-4 py-2 rounded-md hover:bg-gray-600 hover:text-white text-base font-medium transition">
+        About
+      </button>
+      <button (click)="scrollToAndCloseMenu('contact-details')" class="block w-full text-left text-gray-300 bg-transparent px-4 py-2 rounded-md hover:bg-gray-600 hover:text-white text-base font-medium transition">
+        Contact details
+      </button>
+      <button (click)="scrollToAndCloseMenu('experience')" class="block w-full text-left text-gray-300 bg-transparent px-4 py-2 rounded-md hover:bg-gray-600 hover:text-white text-base font-medium transition">
+        Experience
+      </button>
+      <button (click)="scrollToAndCloseMenu('skills')" class="block w-full text-left text-gray-300 bg-transparent px-4 py-2 rounded-md hover:bg-gray-600 hover:text-white text-base font-medium transition">
+        Skills
+      </button>
+      <button (click)="scrollToAndCloseMenu('education')" class="block w-full text-left text-gray-300 bg-transparent px-4 py-2 rounded-md hover:bg-gray-600 hover:text-white text-base font-medium transition">
+        Education
+      </button>
+      <button (click)="scrollToAndCloseMenu('languages')" class="block w-full text-left text-gray-300 bg-transparent px-4 py-2 rounded-md hover:bg-gray-600 hover:text-white text-base font-medium transition">
+        Languages
+      </button>
+      <button (click)="scrollToAndCloseMenu('contact-me')" class="block w-full text-left text-gray-300 bg-transparent px-4 py-2 rounded-md hover:bg-gray-600 hover:text-white text-base font-medium transition">
+        Contact
+      </button>
 
       <a
         href="assets/my-resume.pdf"
         download="Resume_Akram.pdf"
-        class="block text-gray-300 hover:bg-indigo-500 hover:text-white px-3 py-2 text-base font-medium text-center bg-indigo-600 rounded"
+        class="block text-gray-300 hover:bg-indigo-500 hover:text-white px-4 py-2 text-base font-medium text-center bg-indigo-600 rounded"
       >
         Download CV
       </a>
