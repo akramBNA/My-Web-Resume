@@ -9,6 +9,7 @@ import { EducationComponent } from '../components/education/education.component'
 import { ExperienceComponent } from '../components/experience/experience.component';
 import { LanguagesComponent } from '../components/languages/languages.component';
 import { ContactDetailsComponent } from '../components/contact-details/contact-details.component';
+// import { projectsComponent } from '../components/projects/projects.component';
 
 @Component({
   selector: 'app-root',
@@ -36,7 +37,6 @@ export class AppComponent {
   onScroll(): void {
     const scrollPosition = window.scrollY || document.documentElement.scrollTop || 0;
     this.showScrollToTop = scrollPosition > 200;
-    console.log('Scroll position:', scrollPosition);
   }
 
   scrollToTop(): void {
