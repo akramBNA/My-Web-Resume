@@ -1,19 +1,21 @@
-<section id="languages" class="h-screen flex flex-col items-center bg-white pt-20 px-4">
-  <h2 class="text-4xl font-semibold tracking-tight text-gray-900 sm:text-6xl mt-8 mb-12">Earned Certificates</h2>
+<section id="projects" class="min-h-screen flex flex-col items-center bg-white pt-20 px-4">
+  <h2 class="text-4xl font-semibold tracking-tight text-gray-900 sm:text-6xl mt-8 mb-12">
+    Earned Certificates
+  </h2>
 
   <div class="container mx-auto px-6">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
       <div *ngFor="let file of files" class="bg-white border rounded-xl shadow-lg p-4 text-center">
         
         <div *ngIf="file.type === 'pdf'" class="flex flex-col items-center">
-          <iframe [src]="file.path | safeUrl" class="w-full h-64 border-2 border-gray-300 rounded-lg"></iframe>
+          <img [src]="file.preview" class="w-full h-64 object-cover rounded-lg cursor-pointer border-2 border-gray-300"
+               alt="{{ file.name }}" (click)="openFullscreen(file.path)">
           <p class="mt-2 font-semibold">{{ file.name }}</p>
-          <button (click)="openFullscreen(file.path)" class="text-blue-500 underline text-sm">View Fullscreen</button>
         </div>
 
         <div *ngIf="file.type === 'image'" class="flex flex-col items-center">
-          <img [src]="file.path" class="w-full h-64 object-cover rounded-lg cursor-pointer" 
+          <img [src]="file.path" class="w-full h-64 object-cover rounded-lg cursor-pointer"
                alt="{{ file.name }}" (click)="openFullscreen(file.path)">
           <p class="mt-2 font-semibold">{{ file.name }}</p>
         </div>
