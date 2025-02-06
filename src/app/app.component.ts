@@ -9,6 +9,7 @@ import { EducationComponent } from '../components/education/education.component'
 import { ExperienceComponent } from '../components/experience/experience.component';
 import { LanguagesComponent } from '../components/languages/languages.component';
 import { ContactDetailsComponent } from '../components/contact-details/contact-details.component';
+import { ProjectsComponent } from '../components/projects/projects.component';
 // import { projectsComponent } from '../components/projects/projects.component';
 
 @Component({
@@ -24,6 +25,7 @@ import { ContactDetailsComponent } from '../components/contact-details/contact-d
     EducationComponent,
     ExperienceComponent,
     LanguagesComponent,
+    ProjectsComponent,
     ContactDetailsComponent,
   ],
   templateUrl: './app.component.html',

@@ -1,35 +1,25 @@
-<div class="bg-white h-screen py-10 relative">
+<section id="languages" class="h-screen flex flex-col items-center bg-white pt-20 px-4">
+  <h2 class="text-4xl font-semibold tracking-tight text-gray-900 sm:text-6xl mt-8 mb-12">Earned Certificates</h2>
 
-  <div class="mb-20 text-center">
-    <h2 class="text-4xl font-semibold tracking-tight text-gray-900 sm:text-6xl mt-8">
-      Projects
-    </h2>
-  </div>
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <div *ngFor="let file of files" class="bg-white border rounded-xl shadow-lg p-4 text-center">
+        
+        <div *ngIf="file.type === 'pdf'" class="flex flex-col items-center">
+          <iframe [src]="file.path | safeUrl" class="w-full h-64 border-2 border-gray-300 rounded-lg"></iframe>
+          <p class="mt-2 font-semibold">{{ file.name }}</p>
+          <button (click)="openFullscreen(file.path)" class="text-blue-500 underline text-sm">View Fullscreen</button>
+        </div>
 
-  <div class="relative flex justify-center">
-    <button class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-500 text-white p-2 rounded-full z-10">
-      &#8592;
-    </button>
+        <div *ngIf="file.type === 'image'" class="flex flex-col items-center">
+          <img [src]="file.path" class="w-full h-64 object-cover rounded-lg cursor-pointer" 
+               alt="{{ file.name }}" (click)="openFullscreen(file.path)">
+          <p class="mt-2 font-semibold">{{ file.name }}</p>
+        </div>
 
-    <div class="flex overflow-x-auto py-4 space-x-4 max-w-full px-10">
-      <div class="w-64 bg-gray-100 shadow-lg rounded-lg p-4">
-        <h3 class="text-xl font-semibold mt-4">Card Title 1</h3>
-        <p class="text-gray-600 mt-2">This is a description for card 1. It provides a brief overview of the content.</p>
       </div>
 
-      <div class="w-64 bg-gray-100 shadow-lg rounded-lg p-4">
-        <h3 class="text-xl font-semibold mt-4">Card Title 2</h3>
-        <p class="text-gray-600 mt-2">This is a description for card 2. It provides a brief overview of the content.</p>
-      </div>
-
-      <div class="w-64 bg-gray-100 shadow-lg rounded-lg p-4">
-        <h3 class="text-xl font-semibold mt-4">Card Title 3</h3>
-        <p class="text-gray-600 mt-2">This is a description for card 3. It provides a brief overview of the content.</p>
-      </div>
     </div>
-
-    <button class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-500 text-white p-2 rounded-full z-10">
-      &#8594;
-    </button>
   </div>
-</div>
+</section>
