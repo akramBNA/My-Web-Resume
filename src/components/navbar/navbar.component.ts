@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-// import { Router, NavigationEnd } from '@angular/router';
-// import { ViewportScroller } from '@angular/common';
-
 import { NgIf } from '@angular/common';
 
 @Component({
