@@ -9,7 +9,7 @@ import { EducationComponent } from '../components/education/education.component'
 import { ExperienceComponent } from '../components/experience/experience.component';
 import { LanguagesComponent } from '../components/languages/languages.component';
 import { ContactDetailsComponent } from '../components/contact-details/contact-details.component';
-import { ProjectsComponent } from '../components/projects/projects.component';
+import { CertificatesComponent } from '../components/certificates/certificates.component';
 // import { projectsComponent } from '../components/projects/projects.component';
 
 @Component({
@@ -25,7 +25,7 @@ import { ProjectsComponent } from '../components/projects/projects.component';
     EducationComponent,
     ExperienceComponent,
     LanguagesComponent,
-    ProjectsComponent,
+    CertificatesComponent,
     ContactDetailsComponent,
   ],
   templateUrl: './app.component.html',

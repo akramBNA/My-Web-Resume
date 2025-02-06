@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-projects',
+  selector: 'app-certificates',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.css']
+  templateUrl: './certificates.component.html',
+  styleUrls: ['./certificates.component.css']
 })
-export class ProjectsComponent {
+export class CertificatesComponent {
   files = [
     { path: 'assets/Complete web dev Certificate.pdf', type: 'pdf', name: 'Complete web dev Certificate', preview: 'assets/Preview Complete web dev Certificate.png' },
     { path: 'assets/Docker Beginner Certificate.pdf', type: 'pdf', name: 'Docker Beginner Certificate', preview: 'assets/Preview Docker Beginner Certificate.png' },
