@@ -18,7 +18,7 @@ jobs:
           node-version: 20  # Matches your local Node.js version
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       - name: Build Angular app
         run: npm run build -- --base-href /My-Web-Resume/
