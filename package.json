@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node load-env.js && ng serve",
-    "build": "node load.env.js && ng build",
+    "build": "node ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "prestart": "node load-env.js",
