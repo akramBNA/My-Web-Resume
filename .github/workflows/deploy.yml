@@ -1,0 +1,27 @@
+name: Deploy Angular to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Deploy only when main branch is updated
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20  # Matches your local Node.js version
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Angular app
+        run: npm run build -- --base-href /My-Web-Resume/
+
+      - name: Deploy to GitHub Pages
+        run: npx angular-cli-ghpages --dir=dist/my-web-resume/browser
