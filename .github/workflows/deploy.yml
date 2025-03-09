@@ -22,7 +22,7 @@ jobs:
       - name: 📦 Install Dependencies
         run: npm install --legacy-peer-deps
 
-        # Load environment variables
+        # Load environment variables.
       - name: Set environment variables
         run: |
           echo "EMAILJS_SERVICE_ID=${{ secrets.EMAILJS_SERVICE_ID }}" >> $GITHUB_ENV
