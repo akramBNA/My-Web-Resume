@@ -23,7 +23,7 @@ jobs:
         run: npm install --legacy-peer-deps
 
       - name: Run environment variable loader
-        run: node load-env.js
+        run: node ./load-env.js
 
       - name: 🏗️ Build Angular App
         run: |
