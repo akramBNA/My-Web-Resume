@@ -22,6 +22,9 @@ jobs:
       - name: 📦 Install Dependencies
         run: npm install --legacy-peer-deps
 
+      - name: Run environment variable loader
+        run: node load-env.js
+
       - name: 🏗️ Build Angular App
         run: |
           npm run build
