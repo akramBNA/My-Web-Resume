@@ -17,7 +17,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          cache: "npm"
 
       - name: 📦 Install Dependencies
         run: npm install --legacy-peer-deps
@@ -29,7 +29,6 @@ jobs:
           echo "EMAILJS_TEMPLATE_ID=${{ secrets.EMAILJS_TEMPLATE_ID }}" >> $GITHUB_ENV
           echo "EMAILJS_AUTO_REPLY_TEMPLATE_ID=${{ secrets.EMAILJS_AUTO_REPLY_TEMPLATE_ID }}" >> $GITHUB_ENV
           echo "EMAILJS_PUBLIC_KEY=${{ secrets.EMAILJS_PUBLIC_KEY }}" >> $GITHUB_ENV
-
 
       - name: Run environment variable loader
         run: node ./load-env.js
@@ -44,3 +43,4 @@ jobs:
           branch: gh-pages
           folder: dist/my-web-resume/browser
           clean: true
+          token: ${{ secrets.GH_TOKEN }}
