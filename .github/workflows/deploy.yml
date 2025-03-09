@@ -34,9 +34,9 @@ jobs:
       - name: Run environment variable loader
         run: node ./load-env.js
 
-        # npm run build
+        # ng build --base-href /My-Web-Resume/
       - name: 🏗️ Build Angular App
-        run: ng build --base-href /My-Web-Resume/
+        run: npm run build
 
       - name: 🚀 Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
