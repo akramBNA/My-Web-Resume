@@ -19,3 +19,8 @@ span i {
   color: red;
   margin-right: 5px;
 }
+
+#contact-me form {
+  max-height: 80vh;
+}
+
