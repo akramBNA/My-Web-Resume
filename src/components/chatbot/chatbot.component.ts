@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-chatbot',
+  standalone:true,
   imports: [FormsModule, CommonModule],
   templateUrl: './chatbot.component.html',
   styleUrls: ['./chatbot.component.css'],
