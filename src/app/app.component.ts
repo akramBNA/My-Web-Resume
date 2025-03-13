@@ -10,6 +10,7 @@ import { ExperienceComponent } from '../components/experience/experience.compone
 import { LanguagesComponent } from '../components/languages/languages.component';
 import { ContactDetailsComponent } from '../components/contact-details/contact-details.component';
 import { CertificatesComponent } from '../components/certificates/certificates.component';
+import { ChatbotComponent } from '../components/chatbot/chatbot.component';
 // import { projectsComponent } from '../components/projects/projects.component';
 
 @Component({
@@ -27,6 +28,7 @@ import { CertificatesComponent } from '../components/certificates/certificates.c
     LanguagesComponent,
     CertificatesComponent,
     ContactDetailsComponent,
+    ChatbotComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
