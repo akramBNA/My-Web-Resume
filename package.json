@@ -3,10 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build --base-href /My-Web-Resume/",
+    "start": "node load-env.js && ng serve",
+    "prebuild": "node ./load-env.js",
+    "build": "node ./load-env.js && ng build --base-href /My-Web-Resume/",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "prestart": "node load-env.js"
   },
   "private": true,
   "dependencies": {
