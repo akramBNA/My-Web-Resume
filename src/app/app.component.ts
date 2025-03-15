@@ -1,5 +1,4 @@
-import { Component, HostListener } from '@angular/core';
-import { NgIf } from '@angular/common';
+import { Component } from '@angular/core';
 import { NavbarComponent } from '../components/navbar/navbar.component';
 import { FooterComponent } from '../components/footer/footer.component';
 import { ContactMeComponent } from '../components/contact-me/contact-me.component';
@@ -11,13 +10,12 @@ import { LanguagesComponent } from '../components/languages/languages.component'
 import { ContactDetailsComponent } from '../components/contact-details/contact-details.component';
 import { CertificatesComponent } from '../components/certificates/certificates.component';
 import { ChatbotComponent } from '../components/chatbot/chatbot.component';
-// import { projectsComponent } from '../components/projects/projects.component';
+import { ScrollToTopComponent } from '../components/scroll-to-top/scroll-to-top.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    NgIf,
     NavbarComponent,
     FooterComponent,
     ContactMeComponent,
@@ -28,22 +26,12 @@ import { ChatbotComponent } from '../components/chatbot/chatbot.component';
     LanguagesComponent,
     CertificatesComponent,
     ContactDetailsComponent,
-    ChatbotComponent
+    ChatbotComponent,
+    ScrollToTopComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'my-web-resume';
-  showScrollToTop = false;
-
-  @HostListener('window:scroll', [])
-  onScroll(): void {
-    const scrollPosition = window.scrollY || document.documentElement.scrollTop || 0;
-    this.showScrollToTop = scrollPosition > 200;
-  }
-
-  scrollToTop(): void {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
 }
