@@ -34,7 +34,9 @@ jobs:
       #   run: node ./load-env.js
 
       - name: 🏗️ Build Angular App
-        run: npm run build -- --configuration=production
+        run: npm run build
+
+        #-- --configuration=production
 
       - name: 🚀 Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
