@@ -37,8 +37,7 @@ export class ContactMeComponent {
       this.isLoading = true;
       const form = this.contactForm.value;
 
-      emailjs
-        .send(
+      emailjs.send(
           environment.EMAILJS_SERVICE_ID,
           environment.EMAILJS_TEMPLATE_ID,
           {
@@ -49,8 +48,7 @@ export class ContactMeComponent {
             message: form.message,
           },
           environment.EMAILJS_PUBLIC_KEY,
-        )
-        .then(() => {
+        ).then(() => {
           Swal.fire({
             title: 'Success!',
             text: 'Your message has been sent.',
@@ -62,8 +60,7 @@ export class ContactMeComponent {
             this.contactForm.reset();
             this.sendAutoReply();
           });
-        })
-        .catch(() => {
+        }).catch(() => {
           Swal.fire({
             title: 'Error!',
             text: 'There was an issue sending your message. Please try again later.',

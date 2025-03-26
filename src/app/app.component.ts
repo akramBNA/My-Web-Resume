@@ -11,6 +11,7 @@ import { ContactDetailsComponent } from '../components/contact-details/contact-d
 import { CertificatesComponent } from '../components/certificates/certificates.component';
 import { ChatbotComponent } from '../components/chatbot/chatbot.component';
 import { ScrollToTopComponent } from '../components/scroll-to-top/scroll-to-top.component';
+import { AnalyticsComponent } from '../components/analytics/analytics.component';
 
 @Component({
   selector: 'app-root',
@@ -27,11 +28,11 @@ import { ScrollToTopComponent } from '../components/scroll-to-top/scroll-to-top.
     CertificatesComponent,
     ContactDetailsComponent,
     ChatbotComponent,
-    ScrollToTopComponent
+    ScrollToTopComponent,
+    AnalyticsComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'my-web-resume';
 }
