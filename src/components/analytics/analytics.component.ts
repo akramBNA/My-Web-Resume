@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { CookieService } from 'ngx-cookie-service';
-import { environment } from '../../environments/environment.variables';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-analytics',
