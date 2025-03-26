@@ -1,7 +1,7 @@
 # Environment variable files
 .env
 /src/environments/environment.variables.ts
-# /src/environments/environment.prod.ts
+/src/environments/environment.prod.ts
 
 # Node modules
 /node_modules
