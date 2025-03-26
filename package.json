@@ -3,10 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build --base-href /My-Web-Resume/",
+    "start": "node load-env.js && ng serve",
+    "prebuild": "node ./load-env.js",
+    "build": "node ./load-env.js && ng build --base-href /My-Web-Resume/",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "prestart": "node load-env.js"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +24,7 @@
     "@angular/router": "^18.2.0",
     "@emailjs/browser": "^4.4.1",
     "@fortawesome/fontawesome-free": "^6.7.1",
+    "@types/node": "^22.10.2",
     "chart.js": "^4.4.7",
     "dotenv": "^16.4.7",
     "ngx-cookie-service": "^19.1.2",
@@ -36,7 +39,6 @@
     "@angular/cli": "^18.2.10",
     "@angular/compiler-cli": "^18.2.0",
     "@types/jasmine": "~5.1.0",
-    "@types/node": "^22.13.13",
     "autoprefixer": "^10.4.20",
     "jasmine-core": "~5.2.0",
     "karma": "~6.4.0",
