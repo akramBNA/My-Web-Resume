@@ -29,14 +29,9 @@ jobs:
           echo "EMAILJS_AUTO_REPLY_TEMPLATE_ID=${{ secrets.EMAILJS_AUTO_REPLY_TEMPLATE_ID }}" >> $GITHUB_ENV
           echo "EMAILJS_PUBLIC_KEY=${{ secrets.EMAILJS_PUBLIC_KEY }}" >> $GITHUB_ENV
           echo "GOOGLE_ANALYTICS_ID=${{ secrets.GOOGLE_ANALYTICS_ID }}" >> $GITHUB_ENV
-          
-      # - name: Run environment variable loader
-      #   run: node ./load-env.js
 
       - name: 🏗️ Build Angular App
-        run: npm run build
-
-        #-- --configuration=production
+        run: npm run build -- --configuration=production
 
       - name: 🚀 Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
