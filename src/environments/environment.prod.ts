@@ -1,9 +1,8 @@
-import { Environment } from './environment.interface';
-
-export const environment: Environment = {
+export const environment = {
   production: true,
-  EMAILJS_SERVICE_ID: 'service_2trf6u1',
-  EMAILJS_TEMPLATE_ID: 'template_b9dfigf',
-  EMAILJS_AUTO_REPLY_TEMPLATE_ID: 'template_rt17whj',
-  EMAILJS_PUBLIC_KEY: '1PX2P6dWBFkvJm3qZ',
+  EMAILJS_SERVICE_ID: process.env['EMAILJS_SERVICE_ID'] || '',
+  EMAILJS_TEMPLATE_ID: process.env['EMAILJS_TEMPLATE_ID'] || '',
+  EMAILJS_AUTO_REPLY_TEMPLATE_ID: process.env['EMAILJS_AUTO_REPLY_TEMPLATE_ID'] || '',
+  EMAILJS_PUBLIC_KEY: process.env['EMAILJS_PUBLIC_KEY'] || '',
+  GOOGLE_ANALYTICS_ID: process.env['GOOGLE_ANALYTICS_ID'] || ''
 };
