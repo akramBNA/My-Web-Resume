@@ -3,7 +3,6 @@ import { DOCUMENT } from '@angular/common';
 import { CookieService } from 'ngx-cookie-service';
 import { environment } from '../../environments/environment.variables';
 
-
 @Component({
   selector: 'app-analytics',
   standalone: true,
@@ -25,17 +24,18 @@ export class AnalyticsComponent implements OnInit {
     const script1 = this.document.createElement('script');
     script1.async = true;
     script1.src = `https://www.googletagmanager.com/gtag/js?id=${environment.GOOGLE_ANALYTICS_ID}`;
-    
-    const script2 = this.document.createElement('script');
-    script2.text = `
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', ${environment.GOOGLE_ANALYTICS_ID});
-    `;
+    script1.onload = () => {
+      const script2 = this.document.createElement('script');
+      script2.text = `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${environment.GOOGLE_ANALYTICS_ID}');
+      `;
+      this.document.head.appendChild(script2);
+    };
 
     this.document.head.appendChild(script1);
-    this.document.head.appendChild(script2);
   }
 
   trackVisits() {
@@ -49,7 +49,5 @@ export class AnalyticsComponent implements OnInit {
       this.cookieService.set('visit_count', visitCount.toString(), 365);
       console.log('You are a returning visitor:', this.cookieService.get('visitor_id'), ` - You have visited this site ${visitCount} times`);
     }
-
   }
 }
-
