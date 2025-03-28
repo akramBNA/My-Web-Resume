@@ -1,7 +1,4 @@
-<!-- <div id="contact-me" class="isolate bg-white px-6 py-24 sm:py-12 lg:px-8 relative"> -->
   <div id="contact-me" class="isolate bg-white px-6 lg:px-8 relative h-screen flex flex-col justify-center overflow-hidden">
-    <!--py-12 sm:py-8-->
-
   <div *ngIf="isLoading" class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 z-1000">
     <mat-spinner></mat-spinner>
   </div>
@@ -14,7 +11,7 @@
 
       <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
         <div>
-          <label for="firstName" class="block text-sm/6 font-semibold text-gray-900">First name</label>
+          <label for="firstName" class="block text-sm/6 font-semibold text-gray-900">First name <span style="color: red;">*</span></label>
           <div class="mt-2.5">
             <input
               id="firstName"
@@ -30,7 +27,7 @@
           </div>
         </div>
         <div>
-          <label for="lastName" class="block text-sm/6 font-semibold text-gray-900">Last name</label>
+          <label for="lastName" class="block text-sm/6 font-semibold text-gray-900">Last name <span style="color: red;">*</span></label>
           <div class="mt-2.5">
             <input
               id="lastName"
@@ -46,7 +43,7 @@
           </div>
         </div>
         <div class="sm:col-span-2">
-          <label for="subject" class="block text-sm/6 font-semibold text-gray-900">Subject</label>
+          <label for="subject" class="block text-sm/6 font-semibold text-gray-900">Subject <span style="color: red;">*</span></label>
           <div class="mt-2.5">
             <input
               id="subject"
@@ -62,7 +59,7 @@
           </div>
         </div>
         <div class="sm:col-span-2">
-          <label for="email" class="block text-sm/6 font-semibold text-gray-900">Email</label>
+          <label for="email" class="block text-sm/6 font-semibold text-gray-900">Email <span style="color: red;">*</span></label>
           <div class="mt-2.5">
             <input
               id="email"
@@ -78,7 +75,7 @@
           </div>
         </div>
         <div class="sm:col-span-2">
-          <label for="message" class="block text-sm/6 font-semibold text-gray-900">Message</label>
+          <label for="message" class="block text-sm/6 font-semibold text-gray-900">Message <span style="color: red;">*</span></label>
           <div class="mt-2.5">
             <textarea
               id="message"
