@@ -1,6 +1,6 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { CookieService } from 'ngx-cookie-service';
+import { AnalyticsService } from '../../services/analytics.service';
 import { environment } from '../../environments/environment';
 
 @Component({
@@ -11,13 +11,13 @@ import { environment } from '../../environments/environment';
   styleUrl: './analytics.component.css'
 })
 export class AnalyticsComponent implements OnInit {
-
-  constructor(private cookieService: CookieService) {}
   private document = inject(DOCUMENT);
+
+  constructor(private analyticsService: AnalyticsService) {}
 
   ngOnInit() {
     this.addGoogleAnalytics();
-    this.trackVisits();
+    this.analyticsService.trackVisits();
   }
 
   private addGoogleAnalytics() {
@@ -34,20 +34,6 @@ export class AnalyticsComponent implements OnInit {
       `;
       this.document.head.appendChild(script2);
     };
-
     this.document.head.appendChild(script1);
-  }
-
-  trackVisits() {
-    if (!this.cookieService.check('visitor_id')) {
-      const uniqueId = Math.random().toString(36).substring(2, 15);
-      this.cookieService.set('visitor_id', uniqueId, 365);
-      console.log('New visitor:', uniqueId);
-    } else {
-      let visitCount = Number(this.cookieService.get('visit_count')) || 0;
-      visitCount++;
-      this.cookieService.set('visit_count', visitCount.toString(), 365);
-      console.log('You are a returning visitor:', this.cookieService.get('visitor_id'), ` - You have visited this site ${visitCount} times`);
-    }
   }
 }
