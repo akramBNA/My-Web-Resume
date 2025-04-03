@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: akrambna.github.io/My-Web-Resume/sitemap.xml
