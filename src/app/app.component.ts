@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Title, Meta } from '@angular/platform-browser';
+
 import { NavbarComponent } from '../components/navbar/navbar.component';
 import { FooterComponent } from '../components/footer/footer.component';
 import { ContactMeComponent } from '../components/contact-me/contact-me.component';
@@ -35,4 +37,8 @@ import { AnalyticsComponent } from '../components/analytics/analytics.component'
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  constructor(private titleService: Title, private metaService: Meta) {
+    this.titleService.setTitle('Akram’s Portfolio | Web Developer');
+    this.metaService.updateTag({ name: 'description', content: 'A showcase of Akram Ben Aoun’s projects and skills in web development.' });
+  }
 }
