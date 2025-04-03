@@ -24,6 +24,8 @@
                 "input": "public"
               },
               "src/assets",
+              "src/assets/sitemap.xml",
+              "src/assets/robots.txt",
               "src/robots.txt",
               "src/favicon.ico"
             ],
