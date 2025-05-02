@@ -22,3 +22,5 @@ It is an Angular single-page web application created with Angular and Node.js.
 - Tailwind CSS  
 - Chart.js  
 - EmailJS ..
+
+## ⚠️ THIS PROJECT IS FOR PERSONAL PORTFOLIO USE ONLY. PLEASE DO NOT REUSE OR REDISTRIBUTE ANY PART OF THIS CODE.
