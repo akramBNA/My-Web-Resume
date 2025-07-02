@@ -12,7 +12,7 @@ export class LanguagesComponent implements AfterViewInit {
   ngAfterViewInit() {
     this.createChart('arabicChart', 100, 'rgba(34, 197, 94, 0.8)');
     this.createChart('englishChart', 90, 'rgba(59, 130, 246, 0.8)');
-    this.createChart('frenchChart', 70, 'rgba(249, 115, 22, 0.8)');
+    this.createChart('frenchChart', 85, 'rgba(249, 115, 22, 0.8)');
     this.createChart('turkishChart', 90, 'rgba(234, 179, 8, 0.8)');
   }
   createChart(chartId: string, percentage: number, color: string) {
