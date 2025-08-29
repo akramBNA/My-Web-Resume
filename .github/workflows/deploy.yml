@@ -39,7 +39,7 @@ jobs:
             sed -i 's|<GOOGLE_ANALYTICS_ID>|${{ secrets.GOOGLE_ANALYTICS_ID }}|g' src/environments/environment.prod.ts
 
       - name: 🏗️ Build Angular App
-        run: npm run build -- --configuration=production
+        run: npm run build --configuration=production
 
       - name: 🚀 Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
