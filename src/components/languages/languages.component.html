@@ -1,27 +1,29 @@
-<section id="languages" class="h-screen flex flex-col items-center bg-white pt-20 px-4">
-    <h2 class="text-4xl font-semibold tracking-tight text-gray-900 sm:text-6xl mt-8 mb-12">Spoken Languages</h2>
+<section id="languages" class="min-h-[100vh] flex flex-col items-center bg-white pt-20 px-4">
+  <h2 class="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl mt-8 mb-6">Spoken Languages</h2>
 
-    <div class="grid grid-cols-2 gap-16 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
-      
-        <div class="flex flex-col items-center">
-        <canvas id="arabicChart" class="w-53 h-53 md:w-40 md:h-40 lg:w-48 lg:h-48"></canvas>
-        <p class="mt-4 text-lg font-semibold text-gray-700">Arabic</p>
-      </div>
+  <div class="flex gap-4 mb-6 mt-20">
+    <button
+      (click)="createChart('radar')"
+      class="px-4 py-2 rounded-lg border hover:bg-gray-500"
+      [class.bg-gray-600]="selectedKind === 'radar'"
+      [class.text-white]="selectedKind === 'radar'"
+      [class.border-gray-600]="selectedKind === 'radar'">
+      Radar
+    </button>
 
-      <div class="flex flex-col items-center">
-        <canvas id="englishChart" class="w-53 h-53 md:w-40 md:h-40 lg:w-48 lg:h-48"></canvas>
-        <p class="mt-4 text-lg font-semibold text-gray-700">English</p>
-      </div>
+    <button
+      (click)="createChart('bar')"
+      class="px-4 py-2 rounded-lg border hover:bg-gray-500"
+      [class.bg-gray-600]="selectedKind === 'bar'"
+      [class.text-white]="selectedKind === 'bar'"
+      [class.border-gray-600]="selectedKind === 'bar'">
+      Vertical Bar
+    </button>
+  </div>
 
-      <div class="flex flex-col items-center">
-        <canvas id="frenchChart" class="w-53 h-53 md:w-40 md:h-40 lg:w-48 lg:h-48"></canvas>
-        <p class="mt-4 text-lg font-semibold text-gray-700">French</p>
-      </div>
-
-      <div class="flex flex-col items-center">
-        <canvas id="turkishChart" class="w-53 h-53 md:w-40 md:h-40 lg:w-48 lg:h-48"></canvas>
-        <p class="mt-4 text-lg font-semibold text-gray-700">Turkish</p>
-      </div>
+  <div class="w-full max-w-3xl px-4">
+    <div class="w-full" style="height:360px;">
+      <canvas id="languagesCombinedChart" class="w-full h-full"></canvas>
     </div>
+  </div>
 </section>
-  
