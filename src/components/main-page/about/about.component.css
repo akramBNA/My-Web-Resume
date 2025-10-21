@@ -1,0 +1,13 @@
+.about-section {
+  background: linear-gradient(to bottom right, #0a1f44, #1e3a8a, #3b82f6);
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-in-out;
+}
+

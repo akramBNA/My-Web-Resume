@@ -1,13 +1,17 @@
 import { Component } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { ResumePageComponent } from '../components/curriculum-page/resume-page/resume-page.component';
+import { AboutComponent } from '../components/main-page/about/about.component';
+import { NavbarComponent } from "../components/main-page/navbar/navbar.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    ResumePageComponent
-  ],
+    ResumePageComponent,
+    AboutComponent,
+    NavbarComponent
+],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
