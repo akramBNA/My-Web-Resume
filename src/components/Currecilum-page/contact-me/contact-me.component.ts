@@ -8,7 +8,7 @@ import {
 import { CommonModule } from '@angular/common';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import emailjs from '@emailjs/browser';
-import { environment } from '../../environments/environment';
+import { environment } from '../../../environments/environment';
 import Swal from 'sweetalert2';
 
 @Component({

@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { AnalyticsService } from '../../services/analytics.service';
-import { environment } from '../../environments/environment';
+import { AnalyticsService } from '../../../services/analytics.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-analytics',

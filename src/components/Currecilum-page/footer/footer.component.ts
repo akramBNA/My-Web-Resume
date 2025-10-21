@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AnalyticsService } from '../../services/analytics.service';
+import { AnalyticsService } from '../../../services/analytics.service';
 
 @Component({
   selector: 'app-footer',
