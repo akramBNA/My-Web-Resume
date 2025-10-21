@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
-import { ResumePageComponent } from '../components/Currecilum-page/resume-page/resume-page.component';
+import { ResumePageComponent } from '../components/curriculum-page/resume-page/resume-page.component';
 
 @Component({
   selector: 'app-root',
