@@ -39,6 +39,6 @@ import { AnalyticsComponent } from '../components/analytics/analytics.component'
 export class AppComponent {
   constructor(private titleService: Title, private metaService: Meta) {
     this.titleService.setTitle('Akram’s Portfolio | Web Developer');
-    this.metaService.updateTag({ name: 'description', content: 'A showcase of Akram Ben Aoun’s projects and skills in web development.' });
+    this.metaService.updateTag({ name: 'description', content: 'A showcase of Akram Benaoun’s projects and skills in web development.' });
   }
 }
