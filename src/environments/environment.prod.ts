@@ -7,5 +7,5 @@ export const environment = {
   GOOGLE_ANALYTICS_ID: '<GOOGLE_ANALYTICS_ID>',
 
   OPEN_WEATHER_API_KEY: '<OPENWEATHER_API_KEY>',
-  OPEN_WEATHER_API_URL: 'https://api.openweathermap.org/data/2.5/weather'
+  OPEN_WEATHER_API_URL: '<OPENWEATHER_API_URL>'
 };
