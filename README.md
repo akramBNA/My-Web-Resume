@@ -39,3 +39,10 @@ It is an Angular single-page web application created with Angular and Node.js.
 
 ![ScreenShot06](/src/assets/Sreenshot06.png)
 
+![ScreenShot07](/src/assets/Sreenshot06.png)
+
+![ScreenShot08](/src/assets/Sreenshot08.png)
+
+![ScreenShot09](/src/assets/Sreenshot09.png)
+
+
