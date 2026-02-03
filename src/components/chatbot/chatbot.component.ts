@@ -1,8 +1,6 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ChatService } from '../../services/chat.service';
-import { ChatMessage } from './message.model';
 
 @Component({
   selector: 'app-chatbot',
@@ -12,41 +10,46 @@ import { ChatMessage } from './message.model';
   styleUrls: ['./chatbot.component.scss']
 })
 export class ChatbotComponent {
-  open = false;
-  input = '';
-  loading = false;
+  showChatbox = false;
+  userInput = '';
+  typing = false;
 
-  messages: ChatMessage[] = [
-    { role: 'assistant', content: 'Hey 👋 How can I help?' }
+  messages = [
+    { sender: 'bot', text: 'Hi! I’m your assistant 👋' }
   ];
 
-  @ViewChild('scroll') scroll!: ElementRef;
+  @ViewChild('scrollContainer') scroll!: ElementRef;
 
-  constructor(private chat: ChatService) {}
-
-  toggle() {
-    this.open = !this.open;
+  toggleChatbox() {
+    this.showChatbox = !this.showChatbox;
+    setTimeout(() => this.scrollToBottom(), 0);
   }
 
-  send() {
-    if (!this.input.trim()) return;
+  sendMessage() {
+    if (!this.userInput.trim()) return;
 
-    this.messages.push({ role: 'user', content: this.input });
-    this.loading = true;
+    this.messages.push({ sender: 'user', text: this.userInput });
+    this.userInput = '';
+    this.scrollToBottom();
 
-    this.chat.sendMessage(this.input).subscribe(res => {
-      this.messages.push(res);
-      this.loading = false;
+    this.typing = true;
+
+    setTimeout(() => {
+      this.messages.push({
+        sender: 'bot',
+        text: 'That’s interesting 🤔 Let’s talk more about it.'
+      });
+      this.typing = false;
       this.scrollToBottom();
-    });
-
-    this.input = '';
+    }, 900);
   }
 
   private scrollToBottom() {
-    setTimeout(() =>
-      this.scroll.nativeElement.scrollTop =
-      this.scroll.nativeElement.scrollHeight
-    );
+    setTimeout(() => {
+      if (this.scroll) {
+        this.scroll.nativeElement.scrollTop =
+          this.scroll.nativeElement.scrollHeight;
+      }
+    });
   }
 }
