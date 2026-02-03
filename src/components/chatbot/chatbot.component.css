@@ -1,7 +1,7 @@
 .chat-fab {
   position: fixed;
   bottom: 24px;
-  right: 24px;
+  left: 24px;
   width: 56px;
   height: 56px;
   border-radius: 50%;
@@ -16,7 +16,7 @@
 .chat-window {
   position: fixed;
   bottom: 96px;
-  right: 24px;
+  left: 24px;
   width: 360px;
   height: 480px;
   background: #ffffff;
