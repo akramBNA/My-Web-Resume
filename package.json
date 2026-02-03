@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build --base-href '/' ",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"  
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
@@ -25,6 +25,7 @@
     "@types/node": "^22.10.2",
     "chart.js": "^4.4.7",
     "dotenv": "^16.4.7",
+    "marked": "^17.0.1",
     "ngx-cookie-service": "^19.1.2",
     "nodemailer": "^6.9.16",
     "rxjs": "~7.8.0",
