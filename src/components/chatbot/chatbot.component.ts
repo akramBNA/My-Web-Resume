@@ -1,64 +1,55 @@
-import { FormsModule } from '@angular/forms';
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-chatbot',
-  standalone:true,
-  imports: [FormsModule, CommonModule],
+  standalone: true,
+  imports: [CommonModule, FormsModule],
   templateUrl: './chatbot.component.html',
-  styleUrls: ['./chatbot.component.css'],
+  styleUrls: ['./chatbot.component.scss']
 })
 export class ChatbotComponent {
   showChatbox = false;
-  userInput: string = '';
-  messages = [{ sender: 'bot', text: 'Hello! How can I help you today?' }];
+  userInput = '';
+  typing = false;
+
+  messages = [
+    { sender: 'bot', text: 'Hi! I’m your assistant 👋' }
+  ];
+
+  @ViewChild('scrollContainer') scroll!: ElementRef;
 
   toggleChatbox() {
     this.showChatbox = !this.showChatbox;
+    setTimeout(() => this.scrollToBottom(), 0);
   }
 
   sendMessage() {
-    if (this.userInput.trim() === '') return;
+    if (!this.userInput.trim()) return;
 
     this.messages.push({ sender: 'user', text: this.userInput });
-
-    const response = this.getBotResponse(this.userInput);
-    this.messages.push({ sender: 'bot', text: response });
-
     this.userInput = '';
+    this.scrollToBottom();
+
+    this.typing = true;
 
     setTimeout(() => {
-      const chatbox = document.getElementById('chatbox-messages');
-      if (chatbox) {
-        chatbox.scrollTop = chatbox.scrollHeight;
+      this.messages.push({
+        sender: 'bot',
+        text: 'That’s interesting 🤔 Let’s talk more about it.'
+      });
+      this.typing = false;
+      this.scrollToBottom();
+    }, 900);
+  }
+
+  private scrollToBottom() {
+    setTimeout(() => {
+      if (this.scroll) {
+        this.scroll.nativeElement.scrollTop =
+          this.scroll.nativeElement.scrollHeight;
       }
-    }, 100);
-  }
-
-  clearChat() {
-    this.messages = [
-      { sender: 'bot', text: 'Hello! How can I help you today?' }
-    ];
-  }
-
-  getBotResponse(input: string): string {
-    const faq: { [key: string]: string } = {
-      'what is your name': 'My name is Akram.',
-      'what do you do': 'I am a full-stack JavaScript developer.',
-      'where are you from': 'I am from Tunisia.',
-      'what technologies do you use':
-        'I use Angular, Node.js, PostgreSQL, and more.',
-      'what is your experience':
-        'I have experience building full-stack web applications.',
-      'how can i contact you':
-        'You can email me at akrambenaoun1993@gmail.com.',
-    };
-
-    const query = input.trim().toLowerCase();
-    return (
-      faq[query as keyof typeof faq] ||
-      'Sorry, I don’t have an answer for that question.'
-    );
+    });
   }
 }

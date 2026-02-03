@@ -1,23 +1,35 @@
-<div class="chatbot-container">
-    <div class="chatbox" *ngIf="showChatbox">
-      <div class="chat-header">
-        <h4>Chat with me!</h4>
-        <button class="close-btn" (click)="toggleChatbox()">X</button>
-      </div>
-      <div class="chat-messages" id="chatbox-messages">
-        <div *ngFor="let message of messages">
-          <div [class.user-message]="message.sender === 'user'" [class.bot-message]="message.sender === 'bot'">
-            {{ message.text }}
-          </div>
-        </div>
-      </div>
-      <div class="chat-input">
-        <input [(ngModel)]="userInput" placeholder="Ask me something..." (keyup.enter)="sendMessage()"/>
-        <button (click)="sendMessage()">Send</button>
-      </div>
-      <button class="clear-chat-btn" (click)="clearChat()">Clear Chat</button>
+<button class="chat-fab" (click)="toggleChatbox()">💬</button>
+
+<div class="chat-window" *ngIf="showChatbox">
+  <header class="chat-header">
+    <div class="title">
+      <div class="avatar">🤖</div>
+      <span>Assistant</span>
     </div>
-  
-    <button class="chatbot-btn" (click)="toggleChatbox()">💬</button>
+    <button class="close" (click)="toggleChatbox()">✕</button>
+  </header>
+
+  <div class="chat-body" #scrollContainer>
+    <div *ngFor="let msg of messages" class="message" [class.user]="msg.sender === 'user'">
+      <div class="avatar">
+        {{ msg.sender === 'user' ? '🧑' : '🤖' }}
+      </div>
+      <div class="bubble">
+        {{ msg.text }}
+      </div>
+    </div>
+
+    <div class="typing" *ngIf="typing">
+      <span></span><span></span><span></span>
+    </div>
   </div>
-  
+
+  <footer class="chat-footer">
+    <input
+      [(ngModel)]="userInput"
+      placeholder="Message ChatBot…"
+      (keyup.enter)="sendMessage()"
+    />
+    <button (click)="sendMessage()">➤</button>
+  </footer>
+</div>
