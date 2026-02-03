@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { marked } from 'marked';
 
 @Component({
   selector: 'app-chatbot',
@@ -51,5 +52,9 @@ export class ChatbotComponent {
           this.scroll.nativeElement.scrollHeight;
       }
     });
+  }
+
+  renderMarkdown(text: string) {
+    return marked.parse(text);
   }
 }

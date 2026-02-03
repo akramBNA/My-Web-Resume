@@ -15,7 +15,7 @@
         {{ msg.sender === 'user' ? '🧑' : '🤖' }}
       </div>
       <div class="bubble">
-        {{ msg.text }}
+        <div [innerHTML]="renderMarkdown(msg.text)"></div>
       </div>
     </div>
 
