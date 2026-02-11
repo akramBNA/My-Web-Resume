@@ -38,7 +38,7 @@ export class ChatbotComponent {
     setTimeout(() => {
       this.messages.push({
         sender: 'bot',
-        text: 'That’s interesting 🤔 Let’s talk more about it.'
+        text: 'This chatbot is still under development, but it will be able to answer your questions soon! 🚀'
       });
       this.typing = false;
       this.scrollToBottom();
