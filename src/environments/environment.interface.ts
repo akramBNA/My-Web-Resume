@@ -5,6 +5,7 @@ export interface Environment {
   EMAILJS_AUTO_REPLY_TEMPLATE_ID: string;
   EMAILJS_PUBLIC_KEY: string;
   GOOGLE_ANALYTICS_ID: string;
+  VISITOR_COUNT_API_URL: string;
 
   OPEN_WEATHER_API_KEY: string;
   OPEN_WEATHER_API_URL: string;

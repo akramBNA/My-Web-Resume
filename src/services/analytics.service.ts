@@ -1,31 +1,38 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { CookieService } from 'ngx-cookie-service';
+import { environment } from '../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AnalyticsService {
   private visitorCount = new BehaviorSubject<number>(0);
   visitorCount$ = this.visitorCount.asObservable();
 
-  constructor(private cookieService: CookieService) {}
+  private API_URL = environment.VISITOR_COUNT_API_URL;
+
+  constructor() {}
 
   trackVisits() {
-    if (!this.cookieService.check('visitor_id')) {
-      const uniqueId = Math.random().toString(36).substring(2, 15);
-      this.cookieService.set('visitor_id', uniqueId, 365);
-      this.cookieService.set('visit_count', '1', 365);
-      this.visitorCount.next(1);
+    if (!sessionStorage.getItem('visited')) {
+      fetch(this.API_URL)
+        .then((res) => res.json())
+        .then((data) => {
+          this.visitorCount.next(Number(data.value));
+        })
+        .catch((err) => console.error('Visitor counter error:', err));
+
+      sessionStorage.setItem('visited', 'true');
     } else {
-      let visitCount = Number(this.cookieService.get('visit_count')) || 0;
-      visitCount++;
-      this.cookieService.set('visit_count', visitCount.toString(), 365);
-      this.visitorCount.next(visitCount);
+      fetch(this.API_URL.replace('/hit/', '/get/'))
+        .then((res) => res.json())
+        .then((data) => {
+          this.visitorCount.next(Number(data.value));
+        });
     }
   }
 
   getVisitorCount(): number {
-    return Number(this.cookieService.get('visit_count')) || 0;
+    return this.visitorCount.value;
   }
 }
