@@ -1,0 +1,105 @@
+.languages-section {
+  background: #000;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 2rem;
+  font-family: var(--fluent-font-family, "Segoe UI", sans-serif);
+}
+
+.section-title {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 4rem;
+  text-align: center;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  width: 80px;
+  height: 3px;
+  background: #fff;
+  display: block;
+  margin: 12px auto 0;
+}
+
+.chart-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.chart-buttons button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.chart-buttons button:hover {
+  background: #222;
+}
+.chart-buttons button.active {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+.chart-container {
+  width: 100%;
+  max-width: 700px;
+  height: 360px;
+}
+
+.donut-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  justify-items: center;
+  width: 100%;
+  max-width: 600px;
+}
+.donut-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 160px;
+  height: 180px;
+}
+.donut-card canvas {
+  width: 100% !important;
+  height: auto !important;
+}
+.donut-card p {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .donut-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .donut-card {
+    width: 120px;
+    height: 160px;
+  }
+}
+@media (max-width: 300px) {
+  .donut-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .donut-card {
+    width: 100px;
+    height: 140px;
+  }
+}

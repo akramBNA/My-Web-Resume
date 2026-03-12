@@ -8,7 +8,7 @@
     <div class="hidden lg:flex items-center gap-2 xl:gap-4">
 
       <button (click)="scrollToAndCloseMenu('about')" [class.active-nav]="activeSection === 'about'" class="nav-btn">About</button>
-      <button (click)="scrollToAndCloseMenu('contact-details')" [class.active-nav]="activeSection === 'contact-details'" class="nav-btn">Contact</button>
+      <button (click)="scrollToAndCloseMenu('services')" [class.active-nav]="activeSection === 'services'" class="nav-btn">Services</button>
       <button (click)="scrollToAndCloseMenu('experience')" [class.active-nav]="activeSection === 'experience'" class="nav-btn">Experience</button>
       <button (click)="scrollToAndCloseMenu('skills')" [class.active-nav]="activeSection === 'skills'" class="nav-btn">Skills</button>
       <button (click)="scrollToAndCloseMenu('education')" [class.active-nav]="activeSection === 'education'" class="nav-btn">Education</button>
@@ -39,7 +39,7 @@
   <div class="p-6 space-y-4">
 
     <button (click)="scrollToAndCloseMenu('about')" class="drawer-link">About</button>
-    <button (click)="scrollToAndCloseMenu('contact-details')" class="drawer-link">Contact</button>
+    <button (click)="scrollToAndCloseMenu('services')" class="drawer-link">Services</button>
     <button (click)="scrollToAndCloseMenu('experience')" class="drawer-link">Experience</button>
     <button (click)="scrollToAndCloseMenu('skills')" class="drawer-link">Skills</button>
     <button (click)="scrollToAndCloseMenu('education')" class="drawer-link">Education</button>

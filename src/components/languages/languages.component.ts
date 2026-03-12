@@ -16,16 +16,16 @@ export class LanguagesComponent implements AfterViewInit, OnDestroy {
   labels = ['Arabic', 'English', 'French', 'Turkish'];
   values = [100, 90, 85, 90];
   colors = [
-    'rgba(34, 197, 94, 0.8)',
-    'rgba(59, 130, 246, 0.8)',
-    'rgba(249, 115, 22, 0.8)',
-    'rgba(234, 179, 8, 0.8)',
+    'rgba(34,197,94,0.9)',
+    'rgba(59,130,246,0.9)',
+    'rgba(249,115,22,0.9)',
+    'rgba(234,179,8,0.9)',
   ];
 
-  selectedKind: 'radar' | 'bar' | 'donut' = 'bar';
+  selectedKind: 'radar' | 'bar' | 'donut' = 'donut';
 
   ngAfterViewInit(): void {
-    this.createChart('donut');
+    this.createChart(this.selectedKind);
   }
 
   ngOnDestroy(): void {
@@ -46,11 +46,11 @@ export class LanguagesComponent implements AfterViewInit, OnDestroy {
               {
                 label: 'Proficiency (%)',
                 data: this.values,
-                backgroundColor: 'rgba(34,197,94,0.12)',
-                borderColor: 'rgba(34,197,94,0.9)',
+                backgroundColor: 'rgba(255,255,255,0.1)',
+                borderColor: this.colors[0],
                 borderWidth: 2,
                 pointBackgroundColor: this.colors,
-                pointBorderColor: '#fff',
+                pointBorderColor: '#000',
                 pointHoverRadius: 6,
               },
             ],
@@ -62,29 +62,31 @@ export class LanguagesComponent implements AfterViewInit, OnDestroy {
               r: {
                 suggestedMin: 0,
                 suggestedMax: 100,
-                ticks: { stepSize: 20, callback: (v: any) => `${v}%` },
-                pointLabels: { font: { size: 14 } },
+                grid: { color: 'rgba(255,255,255,0.2)' },
+                angleLines: { color: 'rgba(255,255,255,0.2)' },
+                pointLabels: { color: '#fff', font: { size: 14 } },
+                ticks: {
+                  color: '#fff',
+                  stepSize: 20,
+                  callback: (v: any) => `${v}%`,
+                },
               },
             },
             plugins: {
               legend: { display: false },
               tooltip: {
-                callbacks: {
-                  label: (ctx: any) =>
-                    `${this.labels[ctx.dataIndex]}: ${ctx.formattedValue}%`,
-                },
+                backgroundColor: '#111',
+                titleColor: '#fff',
+                bodyColor: '#fff',
               },
             },
           },
         });
       } else if (kind === 'bar') {
-        const labelsWithPercent = this.labels.map(
-          (l, i) => `${l}\n${this.values[i]}%`,
-        );
         this.chart = new Chart('languagesCombinedChart', {
           type: 'bar',
           data: {
-            labels: labelsWithPercent,
+            labels: this.labels,
             datasets: [
               {
                 label: 'Proficiency (%)',
@@ -96,24 +98,30 @@ export class LanguagesComponent implements AfterViewInit, OnDestroy {
             ],
           },
           options: {
-            indexAxis: 'x',
             responsive: true,
             maintainAspectRatio: false,
             scales: {
               y: {
                 min: 0,
                 max: 100,
-                ticks: { stepSize: 10, callback: (v: any) => `${v}%` },
+                ticks: {
+                  color: '#fff',
+                  stepSize: 10,
+                  callback: (v: any) => `${v}%`,
+                },
+                grid: { color: 'rgba(255,255,255,0.2)' },
               },
-              x: { ticks: { font: { size: 14 } } },
+              x: {
+                ticks: { color: '#fff', font: { size: 14 } },
+                grid: { color: 'transparent' },
+              },
             },
             plugins: {
               legend: { display: false },
               tooltip: {
-                callbacks: {
-                  label: (ctx: any) =>
-                    `${this.labels[ctx.dataIndex]}: ${ctx.formattedValue}%`,
-                },
+                backgroundColor: '#111',
+                titleColor: '#fff',
+                bodyColor: '#fff',
               },
             },
           },
@@ -132,20 +140,20 @@ export class LanguagesComponent implements AfterViewInit, OnDestroy {
               datasets: [
                 {
                   data: [this.values[i], 100 - this.values[i]],
-                  backgroundColor: [this.colors[i], 'rgba(229, 231, 235, 0.6)'],
+                  backgroundColor: [this.colors[i], 'rgba(255,255,255,0.1)'],
                   borderWidth: 0,
                 },
               ],
             },
             options: {
-              responsive: false,
-              maintainAspectRatio: false,
+              responsive: true,
+              maintainAspectRatio: true,
               cutout: '70%',
               plugins: {
                 legend: { display: false },
                 tooltip: {
                   enabled: true,
-                  backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                  backgroundColor: '#111',
                   titleColor: '#fff',
                   bodyColor: '#fff',
                   titleFont: { weight: 'bold', size: 14 },
@@ -159,9 +167,7 @@ export class LanguagesComponent implements AfterViewInit, OnDestroy {
                       }
                       return '';
                     },
-                    title: function () {
-                      return '';
-                    },
+                    title: () => '',
                   },
                 },
               },
