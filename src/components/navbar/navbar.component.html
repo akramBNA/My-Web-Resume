@@ -1,27 +1,25 @@
 <nav class="bg-black sticky top-0 z-50">
   <div class="max-w-7xl mx-auto flex items-center justify-between px-4 lg:px-8 py-3">
-
+    <!-- <nav class="sticky top-0 z-50 backdrop-blur-md bg-black border-b border-gray-800"> --> 
     <div class="flex items-center gap-3">
       <img class="h-9 w-9 rounded-full object-cover" src="assets/profile_picture.jpeg" alt="Logo" />
     </div>
 
     <div class="hidden lg:flex items-center gap-2 xl:gap-4">
 
-      <button (click)="scrollToAndCloseMenu('about')" class="nav-btn">About</button>
-      <button (click)="scrollToAndCloseMenu('contact-details')" class="nav-btn">Contact</button>
-      <button (click)="scrollToAndCloseMenu('experience')" class="nav-btn">Experience</button>
-      <button (click)="scrollToAndCloseMenu('skills')" class="nav-btn">Skills</button>
-      <button (click)="scrollToAndCloseMenu('education')" class="nav-btn">Education</button>
-      <button (click)="scrollToAndCloseMenu('languages')" class="nav-btn">Languages</button>
-      <button (click)="scrollToAndCloseMenu('certificates')" class="nav-btn">Certificates</button>
-      <button (click)="scrollToAndCloseMenu('contact-me')" class="nav-btn">Contact Me</button>
+      <button (click)="scrollToAndCloseMenu('about')" [class.active-nav]="activeSection === 'about'" class="nav-btn">About</button>
+      <button (click)="scrollToAndCloseMenu('contact-details')" [class.active-nav]="activeSection === 'contact-details'" class="nav-btn">Contact</button>
+      <button (click)="scrollToAndCloseMenu('experience')" [class.active-nav]="activeSection === 'experience'" class="nav-btn">Experience</button>
+      <button (click)="scrollToAndCloseMenu('skills')" [class.active-nav]="activeSection === 'skills'" class="nav-btn">Skills</button>
+      <button (click)="scrollToAndCloseMenu('education')" [class.active-nav]="activeSection === 'education'" class="nav-btn">Education</button>
+      <button (click)="scrollToAndCloseMenu('languages')" [class.active-nav]="activeSection === 'languages'" class="nav-btn">Languages</button>
+      <button (click)="scrollToAndCloseMenu('certificates')" [class.active-nav]="activeSection === 'certificates'" class="nav-btn">Certificates</button>
+      <button (click)="scrollToAndCloseMenu('contact-me')" [class.active-nav]="activeSection === 'contact-me'" class="nav-btn">Contact Me</button>
 
     </div>
 
     <div class="hidden lg:block">
-      <a href="assets/Akram_Resume.pdf" download="Resume_Akram.pdf" class="cv-btn">
-        Download CV
-      </a>
+      <a href="assets/Akram_Resume.pdf" download="Resume_Akram.pdf" class="cv-btn">Download CV</a>
     </div>
 
     <button class="lg:hidden rounded p-2 text-gray-300 hover:bg-gray-700" (click)="toggleMenu()">
@@ -49,9 +47,7 @@
     <button (click)="scrollToAndCloseMenu('certificates')" class="drawer-link">Certificates</button>
     <button (click)="scrollToAndCloseMenu('contact-me')" class="drawer-link">Contact Me</button>
 
-    <a href="assets/Akram_Resume.pdf" download="Resume_Akram.pdf" class="drawer-cv">
-      Download CV
-    </a>
+    <a href="assets/Akram_Resume.pdf" download="Resume_Akram.pdf" class="drawer-cv">Download CV</a>
 
   </div>
 </div>

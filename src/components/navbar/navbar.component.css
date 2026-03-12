@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .nav-btn {
   @apply text-gray-300 px-3 py-2 text-sm font-medium rounded-md transition;
 }
@@ -28,4 +32,9 @@
 
 .drawer-cv:hover {
   @apply bg-indigo-500;
+}
+
+.active-nav {
+  background-color: rgb(55 65 81);
+  color: white;
 }
