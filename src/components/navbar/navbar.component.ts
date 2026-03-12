@@ -8,12 +8,12 @@ import { NgIf } from '@angular/common';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
 })
-
 export class NavbarComponent {
   isMenuOpen = false;
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
+    document.body.style.overflow = this.isMenuOpen ? 'hidden' : 'auto';
   }
 
   scrollToAndCloseMenu(sectionId: string) {
@@ -28,4 +28,3 @@ export class NavbarComponent {
     this.isMenuOpen = false;
   }
 }
-

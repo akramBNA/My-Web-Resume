@@ -1,6 +1,31 @@
-.nav-link:hover {
-    background-color: rgba(75, 85, 99, 0.5); /* Gray highlight */
-    color: white;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
+.nav-btn {
+  @apply text-gray-300 px-3 py-2 text-sm font-medium rounded-md transition;
+}
+
+.nav-btn:hover {
+  @apply bg-gray-700 text-white;
+}
+
+.cv-btn {
+  @apply bg-indigo-600 text-white text-sm px-4 py-2 rounded-md font-medium transition;
+}
+
+.cv-btn:hover {
+  @apply bg-indigo-500;
+}
+
+.drawer-link {
+  @apply block w-full text-left text-gray-300 px-4 py-3 rounded-md text-base font-medium transition;
+}
+
+.drawer-link:hover {
+  @apply bg-gray-700 text-white;
+}
+
+.drawer-cv {
+  @apply block text-center bg-indigo-600 text-white px-4 py-3 rounded-md font-medium mt-4;
+}
+
+.drawer-cv:hover {
+  @apply bg-indigo-500;
+}

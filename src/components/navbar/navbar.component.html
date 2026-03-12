@@ -1,110 +1,57 @@
 <nav class="bg-black sticky top-0 z-50">
-  <div class="container mx-auto flex items-center justify-between px-4 py-2">
-    <div class="flex items-center">
-      <img
-        class="h-8 w-8 rounded-full"
-        src="assets/profile_picture.jpeg"
-        alt="Logo"
-      />
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-4 lg:px-8 py-3">
+
+    <div class="flex items-center gap-3">
+      <img class="h-9 w-9 rounded-full object-cover" src="assets/profile_picture.jpeg" alt="Logo" />
     </div>
 
-    <div class="hidden md:flex space-x-6">
-      <button (click)="scrollToAndCloseMenu('about')" class="inline-flex items-center text-gray-300 bg-transparent px-4 py-2 rounded-md hover:bg-gray-700 hover:text-white text-sm font-medium transition">
-        About
-      </button>
-      <button (click)="scrollToAndCloseMenu('contact-details')" class="inline-flex items-center text-gray-300 bg-transparent px-4 py-2 rounded-md hover:bg-gray-700 hover:text-white text-sm font-medium transition">
-        Contact Details
-      </button>
-      <button (click)="scrollToAndCloseMenu('experience')" class="inline-flex items-center text-gray-300 bg-transparent px-4 py-2 rounded-md hover:bg-gray-700 hover:text-white text-sm font-medium transition">
-        Experience
-      </button>
-      <button (click)="scrollToAndCloseMenu('skills')" class="inline-flex items-center text-gray-300 bg-transparent px-4 py-2 rounded-md hover:bg-gray-700 hover:text-white text-sm font-medium transition">
-        Skills
-      </button>
-      <button (click)="scrollToAndCloseMenu('education')" class="inline-flex items-center text-gray-300 bg-transparent px-4 py-2 rounded-md hover:bg-gray-700 hover:text-white text-sm font-medium transition">
-        Education
-      </button>
-      <button (click)="scrollToAndCloseMenu('languages')" class="inline-flex items-center text-gray-300 bg-transparent px-4 py-2 rounded-md hover:bg-gray-700 hover:text-white text-sm font-medium transition">
-        Languages
-      </button>
-      <button (click)="scrollToAndCloseMenu('certificates')" class="inline-flex items-center text-gray-300 bg-transparent px-4 py-2 rounded-md hover:bg-gray-700 hover:text-white text-sm font-medium transition">
-       Certificates
-      </button>
-      <button (click)="scrollToAndCloseMenu('contact-me')" class="inline-flex items-center text-gray-300 bg-transparent px-4 py-2 rounded-md hover:bg-gray-700 hover:text-white text-sm font-medium transition">
-        Contact Me
-      </button>
+    <div class="hidden lg:flex items-center gap-2 xl:gap-4">
+
+      <button (click)="scrollToAndCloseMenu('about')" class="nav-btn">About</button>
+      <button (click)="scrollToAndCloseMenu('contact-details')" class="nav-btn">Contact</button>
+      <button (click)="scrollToAndCloseMenu('experience')" class="nav-btn">Experience</button>
+      <button (click)="scrollToAndCloseMenu('skills')" class="nav-btn">Skills</button>
+      <button (click)="scrollToAndCloseMenu('education')" class="nav-btn">Education</button>
+      <button (click)="scrollToAndCloseMenu('languages')" class="nav-btn">Languages</button>
+      <button (click)="scrollToAndCloseMenu('certificates')" class="nav-btn">Certificates</button>
+      <button (click)="scrollToAndCloseMenu('contact-me')" class="nav-btn">Contact Me</button>
+
     </div>
 
-    <div class="hidden md:block">
-      <a
-        href="assets/Akram_Resume.pdf"
-        download="Resume_Akram.pdf"
-        class="inline-flex items-center rounded bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          stroke-width="2"
-        >
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 4v12" />
-      </svg>
-        <span class="ml-2">Download CV</span>
-      </a>
-    </div>
-
-    <button
-      class="block md:hidden rounded p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none"
-      (click)="toggleMenu()"
-    >
-      <svg
-        class="h-6 w-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="2"
-        stroke="currentColor"
-      >
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
-      </svg>
-    </button>
-  </div>
-
-  <div *ngIf="isMenuOpen" class="md:hidden bg-gray-900">
-    <div class="space-y-1 px-2 py-3">
-      <button (click)="scrollToAndCloseMenu('about')" class="block w-full text-left text-gray-300 bg-transparent px-4 py-2 rounded-md hover:bg-gray-600 hover:text-white text-base font-medium transition">
-        About
-      </button>
-      <button (click)="scrollToAndCloseMenu('contact-details')" class="block w-full text-left text-gray-300 bg-transparent px-4 py-2 rounded-md hover:bg-gray-600 hover:text-white text-base font-medium transition">
-        Contact Details
-      </button>
-      <button (click)="scrollToAndCloseMenu('experience')" class="block w-full text-left text-gray-300 bg-transparent px-4 py-2 rounded-md hover:bg-gray-600 hover:text-white text-base font-medium transition">
-        Experience
-      </button>
-      <button (click)="scrollToAndCloseMenu('skills')" class="block w-full text-left text-gray-300 bg-transparent px-4 py-2 rounded-md hover:bg-gray-600 hover:text-white text-base font-medium transition">
-        Skills
-      </button>
-      <button (click)="scrollToAndCloseMenu('education')" class="block w-full text-left text-gray-300 bg-transparent px-4 py-2 rounded-md hover:bg-gray-600 hover:text-white text-base font-medium transition">
-        Education
-      </button>
-      <button (click)="scrollToAndCloseMenu('languages')" class="block w-full text-left text-gray-300 bg-transparent px-4 py-2 rounded-md hover:bg-gray-600 hover:text-white text-base font-medium transition">
-        Languages
-      </button>
-      <button (click)="scrollToAndCloseMenu('certificates')" class="block w-full text-left text-gray-300 bg-transparent px-4 py-2 rounded-md hover:bg-gray-600 hover:text-white text-base font-medium transition">
-        Certificates
-      </button>
-      <button (click)="scrollToAndCloseMenu('contact-me')" class="block w-full text-left text-gray-300 bg-transparent px-4 py-2 rounded-md hover:bg-gray-600 hover:text-white text-base font-medium transition">
-        Contact Me
-      </button>
-
-      <a
-        href="assets/Akram_Resume.pdf"
-        download="Resume_Akram.pdf"
-        class="block text-gray-300 hover:bg-indigo-500 hover:text-white px-4 py-2 text-base font-medium text-center bg-indigo-600 rounded"
-      >
+    <div class="hidden lg:block">
+      <a href="assets/Akram_Resume.pdf" download="Resume_Akram.pdf" class="cv-btn">
         Download CV
       </a>
     </div>
+
+    <button class="lg:hidden rounded p-2 text-gray-300 hover:bg-gray-700" (click)="toggleMenu()">
+      <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
+    </button>
+
   </div>
 </nav>
+
+<div *ngIf="isMenuOpen" class="fixed inset-0 bg-black/60 z-40" (click)="toggleMenu()"></div>
+
+<div class="fixed top-0 right-0 h-full w-72 bg-gray-900 z-50 transform transition-transform duration-300"
+  [class.translate-x-0]="isMenuOpen" [class.translate-x-full]="!isMenuOpen">
+
+  <div class="p-6 space-y-4">
+
+    <button (click)="scrollToAndCloseMenu('about')" class="drawer-link">About</button>
+    <button (click)="scrollToAndCloseMenu('contact-details')" class="drawer-link">Contact</button>
+    <button (click)="scrollToAndCloseMenu('experience')" class="drawer-link">Experience</button>
+    <button (click)="scrollToAndCloseMenu('skills')" class="drawer-link">Skills</button>
+    <button (click)="scrollToAndCloseMenu('education')" class="drawer-link">Education</button>
+    <button (click)="scrollToAndCloseMenu('languages')" class="drawer-link">Languages</button>
+    <button (click)="scrollToAndCloseMenu('certificates')" class="drawer-link">Certificates</button>
+    <button (click)="scrollToAndCloseMenu('contact-me')" class="drawer-link">Contact Me</button>
+
+    <a href="assets/Akram_Resume.pdf" download="Resume_Akram.pdf" class="drawer-cv">
+      Download CV
+    </a>
+
+  </div>
+</div>
