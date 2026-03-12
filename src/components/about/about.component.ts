@@ -19,6 +19,21 @@ export class AboutComponent implements OnInit, OnDestroy {
     this.timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
     this.updateTime();
     this.timer = setInterval(() => this.updateTime(), 1000);
+
+    const subtitleText = 'Full-Stack JavaScript Developer';
+    const subtitleEl = document.querySelector(
+      '.typing-subtitle',
+    ) as HTMLElement;
+    let index = 0;
+
+    const typingInterval = setInterval(() => {
+      if (subtitleEl) {
+        subtitleEl.textContent = subtitleText.substring(0, index);
+        index++;
+        if (index > subtitleText.length) clearInterval(typingInterval);
+        subtitleEl.classList.add('typed');
+      }
+    }, 100);
   }
 
   ngOnDestroy(): void {
