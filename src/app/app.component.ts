@@ -9,7 +9,7 @@ import { SkillsComponent } from '../components/skills/skills.component';
 import { EducationComponent } from '../components/education/education.component';
 import { ExperienceComponent } from '../components/experience/experience.component';
 import { LanguagesComponent } from '../components/languages/languages.component';
-import { ContactDetailsComponent } from '../components/contact-details/contact-details.component';
+import { ServicesComponent } from '../components/services/services.component';
 import { CertificatesComponent } from '../components/certificates/certificates.component';
 import { ChatbotComponent } from '../components/chatbot/chatbot.component';
 import { ScrollToTopComponent } from '../components/scroll-to-top/scroll-to-top.component';
@@ -28,7 +28,7 @@ import { AnalyticsComponent } from '../components/analytics/analytics.component'
     ExperienceComponent,
     LanguagesComponent,
     CertificatesComponent,
-    ContactDetailsComponent,
+    ServicesComponent,
     ChatbotComponent,
     ScrollToTopComponent,
     AnalyticsComponent
