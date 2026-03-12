@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgIf } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -11,6 +12,8 @@ import { NgIf } from '@angular/common';
 export class NavbarComponent {
   isMenuOpen = false;
   activeSection: string = '';
+  constructor(private router: Router) {}
+
 
   ngOnInit() {
     window.addEventListener('scroll', this.onScroll.bind(this));
@@ -49,7 +52,11 @@ export class NavbarComponent {
     document.body.style.overflow = this.isMenuOpen ? 'hidden' : 'auto';
   }
 
-  scrollToAndCloseMenu(sectionId: string) {
+  scrollToSection(sectionId: string) {
+    // Update URL fragment
+    this.router.navigate([], { fragment: sectionId });
+
+    // Scroll smoothly
     const element = document.getElementById(sectionId);
     if (element) {
       const navbarHeight = document.querySelector('nav')?.clientHeight || 0;
@@ -57,10 +64,10 @@ export class NavbarComponent {
         top: element.offsetTop - navbarHeight,
         behavior: 'smooth',
       });
-      this.isMenuOpen = false;
-      setTimeout(() => {
-        document.body.style.overflow = 'auto';
-      }, 500);
     }
+
+    // Close mobile menu
+    this.isMenuOpen = false;
+    setTimeout(() => (document.body.style.overflow = 'auto'), 500);
   }
 }
