@@ -19,7 +19,7 @@ export class NavbarComponent {
   onScroll() {
     const sections = [
       'about',
-      'contact-details',
+      'services',
       'experience',
       'skills',
       'education',

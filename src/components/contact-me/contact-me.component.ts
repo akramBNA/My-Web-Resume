@@ -1,5 +1,5 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import {
   ReactiveFormsModule,
@@ -7,7 +7,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { environment } from '../../environments/environment.dev';
+import { environment } from '../../environments/environment';
 import Swal from 'sweetalert2';
 import emailjs from '@emailjs/browser';
 
@@ -47,7 +47,8 @@ export class ContactMeComponent {
     this.isLoading = true;
     const form = this.contactForm.value;
 
-    emailjs.send(
+    emailjs
+      .send(
         environment.EMAILJS_SERVICE_ID,
         environment.EMAILJS_TEMPLATE_ID,
         {
@@ -58,7 +59,8 @@ export class ContactMeComponent {
           message: form.message,
         },
         environment.EMAILJS_PUBLIC_KEY,
-      ).then(() => {
+      )
+      .then(() => {
         this.sendAutoReply(form);
 
         Swal.fire({
@@ -70,7 +72,8 @@ export class ContactMeComponent {
         });
 
         this.contactForm.reset();
-      }).catch(() => {
+      })
+      .catch(() => {
         Swal.fire({
           title: 'Error!',
           text: 'There was an issue sending your message. Please try again later.',
@@ -85,7 +88,8 @@ export class ContactMeComponent {
   }
 
   sendAutoReply(form: any) {
-    emailjs.send(
+    emailjs
+      .send(
         environment.EMAILJS_SERVICE_ID,
         environment.EMAILJS_AUTO_REPLY_TEMPLATE_ID,
         {
