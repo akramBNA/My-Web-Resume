@@ -38,7 +38,11 @@ import { AnalyticsComponent } from '../components/analytics/analytics.component'
 })
 export class AppComponent {
   constructor(private titleService: Title, private metaService: Meta) {
-    this.titleService.setTitle('Akram’s Website | Web Developer');
-    this.metaService.updateTag({ name: 'description', content: 'A showcase of Akram Benaoun’s projects and skills in web development.' });
+    this.titleService.setTitle('Akram Benaoun | Web Developer');
+    this.metaService.addTags([
+      { name: 'description', content: 'Akram Benaoun – Web developer showcasing projects, skills, services, and experience.' },
+      { name: 'keywords', content: 'Web Developer, Portfolio, Angular, Frontend, Backend, Projects, Skills' },
+      { name: 'author', content: 'Akram Benaoun' }
+    ]);
   }
 }
