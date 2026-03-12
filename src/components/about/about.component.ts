@@ -6,7 +6,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './about.component.html',
-  styleUrl: './about.component.css'
+  styleUrl: './about.component.css',
 })
 export class AboutComponent implements OnInit, OnDestroy {
   currentTime: string = '';
@@ -30,16 +30,29 @@ export class AboutComponent implements OnInit, OnDestroy {
     this.currentTime = now.toLocaleTimeString([], {
       hour: '2-digit',
       minute: '2-digit',
-      second: '2-digit'
+      second: '2-digit',
     });
     this.currentDate = now.toLocaleDateString([], {
       weekday: 'short',
       year: 'numeric',
       month: 'short',
-      day: 'numeric'
+      day: 'numeric',
     });
 
     const hour = now.getHours();
     this.isDaytime = hour >= 6 && hour < 18;
+  }
+
+  scrollToContact() {
+    const section = document.getElementById('contact-me');
+
+    if (section) {
+      const navbarHeight = document.querySelector('nav')?.clientHeight || 0;
+
+      window.scrollTo({
+        top: section.offsetTop - navbarHeight,
+        behavior: 'smooth',
+      });
+    }
   }
 }
