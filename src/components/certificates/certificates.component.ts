@@ -9,17 +9,18 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./certificates.component.css']
 })
 export class CertificatesComponent {
+
   files = [
-    { path: 'assets/Complete web dev Certificate.pdf', type: 'pdf', name: 'Complete web dev Certificate', preview: 'assets/Preview Complete web dev Certificate.png' },
+    { path: 'assets/Complete web dev Certificate.pdf', type: 'pdf', name: 'Complete Web Dev Certificate', preview: 'assets/Preview Complete web dev Certificate.png' },
     { path: 'assets/Docker Beginner Certificate.pdf', type: 'pdf', name: 'Docker Beginner Certificate', preview: 'assets/Preview Docker Beginner Certificate.png' },
     { path: 'assets/Kubernetes Beginner Certificate.pdf', type: 'pdf', name: 'Kubernetes Beginner Certificate', preview: 'assets/Preview Kubernetes Beginner Certificate.png' },
     { path: 'assets/RBK Certificate.jpeg', type: 'image', name: 'RBK Certificate' },
     { path: 'assets/Scrum Study Certificate.jpeg', type: 'image', name: 'Scrum Study Certificate' },
     { path: 'assets/EF SET Certificate.pdf', type: 'pdf', name: 'EF SET Certificate', preview: 'assets/Preview EF SET Certificate.png' }
-
   ];
 
   openFullscreen(path: string) {
     window.open(path, '_blank');
   }
+
 }
