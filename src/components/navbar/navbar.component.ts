@@ -57,7 +57,10 @@ export class NavbarComponent {
         top: element.offsetTop - navbarHeight,
         behavior: 'smooth',
       });
+      this.isMenuOpen = false;
+      setTimeout(() => {
+        document.body.style.overflow = 'auto';
+      }, 500);
     }
-    this.isMenuOpen = false;
   }
 }
