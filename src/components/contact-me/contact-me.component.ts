@@ -1,22 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import {MatButtonModule} from '@angular/material/button';
+import { CommonModule } from '@angular/common';
 import {
   ReactiveFormsModule,
   FormBuilder,
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { CommonModule } from '@angular/common';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import emailjs from '@emailjs/browser';
-import { environment } from '../../environments/environment';
+import { environment } from '../../environments/environment.dev';
 import Swal from 'sweetalert2';
+import emailjs from '@emailjs/browser';
 
 @Component({
   selector: 'app-contact-me',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, MatProgressSpinnerModule],
+  imports: [CommonModule, ReactiveFormsModule, MatButtonModule],
   templateUrl: './contact-me.component.html',
   styleUrls: ['./contact-me.component.css'],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class ContactMeComponent {
   contactForm: FormGroup;
@@ -33,59 +34,58 @@ export class ContactMeComponent {
   }
 
   sendEmail(): void {
-    if (this.contactForm.valid) {
-      this.isLoading = true;
-      const form = this.contactForm.value;
-
-      emailjs.send(
-          environment.EMAILJS_SERVICE_ID,
-          environment.EMAILJS_TEMPLATE_ID,
-          {
-            firstName: form.firstName,
-            lastName: form.lastName,
-            subject: form.subject,
-            email: form.email,
-            message: form.message,
-          },
-          environment.EMAILJS_PUBLIC_KEY,
-        ).then(() => {
-          Swal.fire({
-            title: 'Success!',
-            text: 'Your message has been sent.',
-            icon: 'success',
-            confirmButtonText: 'OK',
-            confirmButtonColor: '#3085d6',
-          }).then(() => {
-            this.isLoading = false;
-            this.contactForm.reset();
-            this.sendAutoReply();
-          });
-        }).catch(() => {
-          Swal.fire({
-            title: 'Error!',
-            text: 'There was an issue sending your message. Please try again later.',
-            icon: 'error',
-            confirmButtonText: 'OK',
-            confirmButtonColor: '#d33',
-          }).finally(() => {
-            this.isLoading = false;
-          });
-        });
-    } else {
+    if (!this.contactForm.valid) {
       Swal.fire({
-        text: 'Please fill in all fields.',
+        text: 'Please fill in all required fields.',
         icon: 'warning',
         confirmButtonText: 'OK',
         confirmButtonColor: '#f39c12',
       });
+      return;
     }
-  }
 
-  sendAutoReply() {
+    this.isLoading = true;
     const form = this.contactForm.value;
 
-    emailjs
-      .send(
+    emailjs.send(
+        environment.EMAILJS_SERVICE_ID,
+        environment.EMAILJS_TEMPLATE_ID,
+        {
+          firstName: form.firstName,
+          lastName: form.lastName,
+          subject: form.subject,
+          email: form.email,
+          message: form.message,
+        },
+        environment.EMAILJS_PUBLIC_KEY,
+      ).then(() => {
+        this.sendAutoReply(form);
+
+        Swal.fire({
+          title: 'Success!',
+          text: 'Your message has been sent.',
+          icon: 'success',
+          confirmButtonText: 'OK',
+          confirmButtonColor: '#3085d6',
+        });
+
+        this.contactForm.reset();
+      }).catch(() => {
+        Swal.fire({
+          title: 'Error!',
+          text: 'There was an issue sending your message. Please try again later.',
+          icon: 'error',
+          confirmButtonText: 'OK',
+          confirmButtonColor: '#d33',
+        });
+      })
+      .finally(() => {
+        this.isLoading = false;
+      });
+  }
+
+  sendAutoReply(form: any) {
+    emailjs.send(
         environment.EMAILJS_SERVICE_ID,
         environment.EMAILJS_AUTO_REPLY_TEMPLATE_ID,
         {
