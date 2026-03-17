@@ -49,4 +49,4 @@ jobs:
           branch: gh-pages
           folder: dist/my-web-resume/browser
           clean: true
-          token: ${{ secrets.GH_TOKEN }}
+          token: ${{ secrets.PAT_TOKEN }}
