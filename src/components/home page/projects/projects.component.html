@@ -1,0 +1,37 @@
+<section id="projects" class="projects-section">
+    <h2 class="section-title">Projects</h2>
+
+    <div class="projects-grid">
+
+        <div class="project-card" *ngFor="let project of projects" (click)="openProject(project)">
+            <img [src]="project.image" [alt]="project.name" />
+            <div class="grey-layer"></div>
+            <div class="overlay">
+                <h3>{{ project.name }}</h3>
+                <div class="tech-list">
+                    <span class="tech" *ngFor="let t of project.tech">{{t}}</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="project-viewer" *ngIf="selectedProject">
+
+        <div class="viewer-card">
+            <img [src]="selectedProject.image">
+            <div class="viewer-footer">
+                <h3>{{selectedProject.name}}</h3>
+                <div class="tech-list">
+                    <span class="tech" *ngFor="let t of selectedProject.tech">{{t}}</span>
+                </div>
+            </div>
+
+            <button class="close-btn" (click)="closeProject()">✕</button>
+
+        </div>
+
+    </div>
+
+</section>

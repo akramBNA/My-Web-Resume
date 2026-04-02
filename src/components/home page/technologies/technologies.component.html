@@ -1,0 +1,21 @@
+<section id="technologies" class="technologies-section">
+
+  <div class="technologies-container">
+
+    <h2 class="section-title">Technologies</h2>
+
+    <div class="tech-grid">
+
+      <div class="tech-card" *ngFor="let tech of techs">
+
+        <img [src]="tech.logo" [alt]="tech.name">
+
+        <h3>{{ tech.name }}</h3>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

@@ -7,14 +7,12 @@
 
     <div class="hidden lg:flex items-center gap-2 xl:gap-4">
 
-     <button (click)="scrollToSection('about')" [class.active-nav]="activeSection === 'about'" class="nav-btn">About</button>
-    <button (click)="scrollToSection('services')" [class.active-nav]="activeSection === 'services'" class="nav-btn">Services</button>
-    <button (click)="scrollToSection('experience')" [class.active-nav]="activeSection === 'experience'" class="nav-btn">Experience</button>
-    <button (click)="scrollToSection('skills')" [class.active-nav]="activeSection === 'skills'" class="nav-btn">Skills</button>
-    <button (click)="scrollToSection('education')" [class.active-nav]="activeSection === 'education'" class="nav-btn">Education</button>
-    <button (click)="scrollToSection('languages')" [class.active-nav]="activeSection === 'languages'" class="nav-btn">Languages</button>
-    <button (click)="scrollToSection('certificates')" [class.active-nav]="activeSection === 'certificates'" class="nav-btn">Certificates</button>
-    <button (click)="scrollToSection('contact-me')" [class.active-nav]="activeSection === 'contact-me'" class="nav-btn">Contact Me</button>
+    <button [routerLink]="['/']" fragment="about" class="nav-btn">About</button>
+    <button [routerLink]="['/']" fragment="services" class="nav-btn">Services</button>
+    <button [routerLink]="['/']"  fragment="technologies" class="nav-btn">Technologies</button>
+    <button [routerLink]="['/']" fragment="projects" class="nav-btn">Projects</button>
+    <button [routerLink]="['/']" fragment="contact-me" class="nav-btn">Contact Me</button>
+    <button [routerLink]="['/resume']" class="nav-btn">Resume</button>
 
     </div>
 
@@ -38,14 +36,12 @@
 
   <div class="p-6 space-y-4">
 
-    <button (click)="scrollToSection('about')" class="drawer-link">About</button>
-    <button (click)="scrollToSection('services')" class="drawer-link">Services</button>
-    <button (click)="scrollToSection('experience')" class="drawer-link">Experience</button>
-    <button (click)="scrollToSection('skills')" class="drawer-link">Skills</button>
-    <button (click)="scrollToSection('education')" class="drawer-link">Education</button>
-    <button (click)="scrollToSection('languages')" class="drawer-link">Languages</button>
-    <button (click)="scrollToSection('certificates')" class="drawer-link">Certificates</button>
-    <button (click)="scrollToSection('contact-me')" class="drawer-link">Contact Me</button>
+    <button [routerLink]="['/']" fragment="about" class="drawer-link">About</button>
+    <button [routerLink]="['/']" fragment="services" class="drawer-link">Services</button>
+    <button [routerLink]="['/']"  fragment="technologies" class="drawer-link">Technologies</button>
+    <button [routerLink]="['/']" fragment="projects" class="drawer-link">Projects</button>
+    <button [routerLink]="['/']" fragment="contact-me" class="drawer-link">Contact Me</button>
+    <button routerLink="/resume" class="nav-btn" class="drawer-link">Resume</button>
 
     <a href="assets/Akram_Resume.pdf" download="Resume_Akram.pdf" class="drawer-cv">Download CV</a>
 
