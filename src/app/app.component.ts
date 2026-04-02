@@ -1,19 +1,10 @@
 import { Component } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
-
 import { NavbarComponent } from '../components/navbar/navbar.component';
 import { FooterComponent } from '../components/footer/footer.component';
-import { ContactMeComponent } from '../components/contact-me/contact-me.component';
-import { AboutComponent } from '../components/about/about.component';
-import { SkillsComponent } from '../components/skills/skills.component';
-import { EducationComponent } from '../components/education/education.component';
-import { ExperienceComponent } from '../components/experience/experience.component';
-import { LanguagesComponent } from '../components/languages/languages.component';
-import { ServicesComponent } from '../components/services/services.component';
-import { CertificatesComponent } from '../components/certificates/certificates.component';
-import { ChatbotComponent } from '../components/chatbot/chatbot.component';
 import { ScrollToTopComponent } from '../components/scroll-to-top/scroll-to-top.component';
 import { AnalyticsComponent } from '../components/analytics/analytics.component';
+import { RouterOutlet } from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -21,18 +12,10 @@ import { AnalyticsComponent } from '../components/analytics/analytics.component'
   imports: [
     NavbarComponent,
     FooterComponent,
-    ContactMeComponent,
-    AboutComponent,
-    SkillsComponent,
-    EducationComponent,
-    ExperienceComponent,
-    LanguagesComponent,
-    CertificatesComponent,
-    ServicesComponent,
-    ChatbotComponent,
     ScrollToTopComponent,
-    AnalyticsComponent
-  ],
+    AnalyticsComponent,
+    RouterOutlet
+],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })

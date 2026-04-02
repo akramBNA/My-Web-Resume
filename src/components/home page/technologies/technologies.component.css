@@ -1,0 +1,108 @@
+.technologies-section {
+  background: #000;
+  color: #fff;
+
+  min-height: calc(100vh - 70px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 2rem;
+
+  font-family: var(--fluent-font-family, "Segoe UI", sans-serif);
+
+  scroll-margin-top: 90px;
+}
+
+.technologies-container {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 700;
+
+  margin-bottom: 3rem;
+
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+
+  width: 70px;
+  height: 3px;
+
+  background: #fff;
+
+  display: block;
+
+  margin: 12px auto 0;
+}
+
+.tech-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 2rem;
+}
+
+.tech-card {
+  background: #111;
+
+  border: 1px solid #2a2a2a;
+
+  border-radius: 16px;
+
+  padding: 2rem 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 1rem;
+
+  transition: all 0.25s ease;
+
+  cursor: default;
+}
+
+.tech-card:hover {
+  transform: translateY(-6px);
+
+  border-color: #444;
+
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.08);
+}
+
+.tech-card img {
+  height: 45px;
+  width: 45px;
+
+  object-fit: contain;
+}
+
+.tech-card h3 {
+  font-size: 1rem;
+
+  font-weight: 500;
+
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
+}
