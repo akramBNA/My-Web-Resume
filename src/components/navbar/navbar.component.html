@@ -36,15 +36,12 @@
 
   <div class="p-6 space-y-4">
 
-    <button (click)="scrollToSection('about')" class="drawer-link">About</button>
-    <button (click)="scrollToSection('services')" class="drawer-link">Services</button>
-    <!-- <button (click)="scrollToSection('experience')" class="drawer-link">Experience</button>
-    <button (click)="scrollToSection('skills')" class="drawer-link">Skills</button>
-    <button (click)="scrollToSection('education')" class="drawer-link">Education</button>
-    <button (click)="scrollToSection('languages')" class="drawer-link">Languages</button>
-    <button (click)="scrollToSection('certificates')" class="drawer-link">Certificates</button> -->
+    <button [routerLink]="['/']" fragment="about" class="drawer-link">About</button>
+    <button [routerLink]="['/']" fragment="services" class="drawer-link">Services</button>
+    <button [routerLink]="['/']"  fragment="technologies" class="drawer-link">Technologies</button>
+    <button [routerLink]="['/']" fragment="projects" class="drawer-link">Projects</button>
+    <button [routerLink]="['/']" fragment="contact-me" class="drawer-link">Contact Me</button>
     <button routerLink="/resume" class="nav-btn" class="drawer-link">Resume</button>
-    <button (click)="scrollToSection('contact-me')" class="drawer-link">Contact Me</button>
 
     <a href="assets/Akram_Resume.pdf" download="Resume_Akram.pdf" class="drawer-cv">Download CV</a>
 
