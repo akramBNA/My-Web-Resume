@@ -23,7 +23,7 @@ export class NavbarComponent {
       if (event instanceof NavigationEnd) {
         this.currentRoute = this.router.url;
 
-        if (this.currentRoute.includes('resume')) {
+        if (this.currentRoute.startsWith('/resume')) {
           this.activeSection = 'resume';
         } else {
           this.activeSection = 'about'; // 👈 default highlight
@@ -33,7 +33,7 @@ export class NavbarComponent {
   }
 
   onScroll() {
-    if (this.currentRoute.includes('resume')) return;
+    if (this.currentRoute.startsWith('/resume')) return;
 
     const sections = [
       'about',
