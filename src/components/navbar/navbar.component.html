@@ -1,23 +1,20 @@
 <nav class="bg-black sticky top-0 z-50">
   <div class="max-w-7xl mx-auto flex items-center justify-between px-4 lg:px-8 py-3">
-    <!-- <nav class="sticky top-0 z-50 backdrop-blur-md bg-black border-b border-gray-800"> --> 
     <div class="flex items-center gap-3">
       <img class="h-9 w-9 rounded-full object-cover" src="assets/profile_picture.jpeg" alt="Logo" />
     </div>
 
     <div class="hidden lg:flex items-center gap-2 xl:gap-4">
-
-    <button [routerLink]="['/']" fragment="about" class="nav-btn">About</button>
-    <button [routerLink]="['/']" fragment="services" class="nav-btn">Services</button>
-    <button [routerLink]="['/']"  fragment="technologies" class="nav-btn">Technologies</button>
-    <button [routerLink]="['/']" fragment="projects" class="nav-btn">Projects</button>
-    <button [routerLink]="['/']" fragment="contact-me" class="nav-btn">Contact Me</button>
-    <button [routerLink]="['/resume']" class="nav-btn">See Resume</button>
-
+      <button [routerLink]="['/']" fragment="about" class="nav-btn" [class.active-nav]="activeSection === 'about'">About</button>    
+      <button [routerLink]="['/']" fragment="services" class="nav-btn" [class.active-nav]="activeSection === 'services'">Services</button>
+      <button [routerLink]="['/']"  fragment="technologies" class="nav-btn" [class.active-nav]="activeSection === 'technologies'">Technologies</button>
+      <button [routerLink]="['/']" fragment="projects" class="nav-btn" [class.active-nav]="activeSection === 'projects'">Projects</button>
+      <button [routerLink]="['/']" fragment="contact-me" class="nav-btn" [class.active-nav]="activeSection === 'contact-me'">Contact Me</button>
+      <a routerLink="/resume" class="nav-btn" [class.active-nav]="activeSection === 'resume'">See Resume</a>    
     </div>
 
     <div class="hidden lg:block">
-      <a href="assets/Akram_Resume.pdf" download="Resume_Akram.pdf" class="cv-btn">Download CV</a>
+      <a href="assets/Akram_Resume.pdf" download="Resume_Akram.pdf" class="cv-btn">Download CV</a>      
     </div>
 
     <button class="lg:hidden rounded p-2 text-gray-300 hover:bg-gray-700" (click)="toggleMenu()">
@@ -35,15 +32,12 @@
   [class.translate-x-0]="isMenuOpen" [class.translate-x-full]="!isMenuOpen">
 
   <div class="p-6 space-y-4">
-
-    <button [routerLink]="['/']" fragment="about" class="drawer-link">About</button>
-    <button [routerLink]="['/']" fragment="services" class="drawer-link">Services</button>
-    <button [routerLink]="['/']"  fragment="technologies" class="drawer-link">Technologies</button>
-    <button [routerLink]="['/']" fragment="projects" class="drawer-link">Projects</button>
-    <button [routerLink]="['/']" fragment="contact-me" class="drawer-link">Contact Me</button>
-    <button routerLink="/resume" class="nav-btn" class="drawer-link">See Resume</button>
-
+    <button [routerLink]="['/']" fragment="about" class="drawer-link" [class.active-nav]="activeSection === 'about'">About</button>    
+    <button [routerLink]="['/']" fragment="services" class="drawer-link" [class.active-nav]="activeSection === 'services'">Services</button>
+    <button [routerLink]="['/']"  fragment="technologies" class="drawer-link" [class.active-nav]="activeSection === 'technologies'">Technologies</button>
+    <button [routerLink]="['/']" fragment="projects" class="drawer-link" [class.active-nav]="activeSection === 'projects'">Projects</button>
+    <button [routerLink]="['/']" fragment="contact-me" class="drawer-link" [class.active-nav]="activeSection === 'contact-me'">Contact Me</button>
+    <a routerLink="/resume" class="drawer-link nav-btn" [class.active-nav]="activeSection === 'resume'">See Resume</a>    
     <a href="assets/Akram_Resume.pdf" download="Resume_Akram.pdf" class="drawer-cv">Download CV</a>
-
   </div>
 </div>
