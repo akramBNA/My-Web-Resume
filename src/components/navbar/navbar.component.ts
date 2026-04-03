@@ -23,11 +23,8 @@ export class NavbarComponent {
     const sections = [
       'about',
       'services',
-      'experience',
-      'skills',
-      'education',
-      'languages',
-      'certificates',
+      'technologies',
+      'projects',
       'contact-me',
     ];
 
