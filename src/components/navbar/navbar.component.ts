@@ -1,24 +1,46 @@
 import { Component } from '@angular/core';
 import { NgIf, NgClass } from '@angular/common';
-import { Router, RouterLink } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [NgIf, RouterLink],
+  imports: [NgIf, NgClass],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent {
   isMenuOpen = false;
   activeSection: string = '';
+  currentRoute: string = '';
+
   constructor(private router: Router) {}
 
   ngOnInit() {
     window.addEventListener('scroll', this.onScroll.bind(this));
+
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.currentRoute = this.router.url;
+
+        if (this.currentRoute.includes('resume')) {
+          this.activeSection = 'resume';
+        }
+      }
+    });
   }
 
   onScroll() {
+    if (this.currentRoute.includes('resume')) return;
+    if (event instanceof NavigationEnd) {
+      this.currentRoute = this.router.url;
+
+      if (this.currentRoute.includes('resume')) {
+        this.activeSection = 'resume';
+      } else {
+        this.activeSection = 'about';
+      }
+    }
     const sections = [
       'about',
       'services',
