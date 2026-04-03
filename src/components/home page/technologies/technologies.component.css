@@ -96,7 +96,7 @@
 }
 
 @media (max-width: 900px) {
-  .projects-section {
+  .technologies-section {
     scroll-margin-top: 130px;
   }
 
@@ -106,10 +106,10 @@
 }
 
 @media (max-width: 600px) {
-  .projects-section {
+  .technologies-section {
     scroll-margin-top: 130px;
   }
-  
+
   .tech-grid {
     grid-template-columns: 1fr;
   }
