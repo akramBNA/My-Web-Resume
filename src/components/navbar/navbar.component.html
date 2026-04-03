@@ -10,7 +10,7 @@
       <button [routerLink]="['/']"  fragment="technologies" class="nav-btn" [class.active-nav]="activeSection === 'technologies'">Technologies</button>
       <button [routerLink]="['/']" fragment="projects" class="nav-btn" [class.active-nav]="activeSection === 'projects'">Projects</button>
       <button [routerLink]="['/']" fragment="contact-me" class="nav-btn" [class.active-nav]="activeSection === 'contact-me'">Contact Me</button>
-      <button [routerLink]="['/resume']" class="nav-btn">See Resume</button>
+      <a routerLink="/resume" class="nav-btn" [class.active-nav]="activeSection === 'resume'">See Resume</a>    
     </div>
 
     <div class="hidden lg:block">
@@ -37,7 +37,7 @@
     <button [routerLink]="['/']"  fragment="technologies" class="drawer-link" [class.active-nav]="activeSection === 'technologies'">Technologies</button>
     <button [routerLink]="['/']" fragment="projects" class="drawer-link" [class.active-nav]="activeSection === 'projects'">Projects</button>
     <button [routerLink]="['/']" fragment="contact-me" class="drawer-link" [class.active-nav]="activeSection === 'contact-me'">Contact Me</button>
-    <button routerLink="/resume" class="drawer-link nav-btn">See Resume</button>
+    <a routerLink="/resume" class="drawer-link nav-btn" [class.active-nav]="activeSection === 'resume'">See Resume</a>    
     <a href="assets/Akram_Resume.pdf" download="Resume_Akram.pdf" class="drawer-cv">Download CV</a>
   </div>
 </div>

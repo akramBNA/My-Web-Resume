@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { NgIf, NgClass } from '@angular/common';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [NgIf, NgClass],
+  imports: [NgIf, NgClass, RouterLink],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
 })
@@ -25,6 +25,8 @@ export class NavbarComponent {
 
         if (this.currentRoute.includes('resume')) {
           this.activeSection = 'resume';
+        } else {
+          this.activeSection = 'about'; // 👈 default highlight
         }
       }
     });
@@ -32,15 +34,7 @@ export class NavbarComponent {
 
   onScroll() {
     if (this.currentRoute.includes('resume')) return;
-    if (event instanceof NavigationEnd) {
-      this.currentRoute = this.router.url;
 
-      if (this.currentRoute.includes('resume')) {
-        this.activeSection = 'resume';
-      } else {
-        this.activeSection = 'about';
-      }
-    }
     const sections = [
       'about',
       'services',
