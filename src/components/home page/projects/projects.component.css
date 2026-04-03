@@ -1,9 +1,9 @@
 .projects-section {
   background: #000;
   color: #fff;
-  scroll-margin-top: 100px;
-  min-height: calc(100vh - 70px);
 
+  scroll-margin-top: 100px;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,9 +11,6 @@
 
   padding: 2rem;
   gap: 2rem;
-
-  font-family: var(--fluent-font-family, "Segoe UI", sans-serif);
-  scroll-margin-top: 90px;
 }
 
 .section-title {
@@ -46,7 +43,9 @@
   overflow: hidden;
   cursor: pointer;
 
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 .project-card img {
@@ -56,10 +55,10 @@
   display: block;
 }
 
-.grey-layer{
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.25);
+.grey-layer {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
 }
 
 .project-card:hover {
@@ -75,7 +74,7 @@
 
   padding: 1.2rem;
 
-  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent 70%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent 70%);
   transform: translateY(100%);
   transition: transform 0.35s ease;
 }
@@ -89,71 +88,68 @@
   font-size: 1.1rem;
 }
 
-.tech-list{
-  display:flex;
-  flex-wrap:wrap;
-  gap:6px;
-  margin-top:6px;
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
 }
 
-.tech{
-  background:blue;
-  border:1px solid #444;
+.tech {
+  background: blue;
+  border: 1px solid #444;
 
-  padding:3px 8px;
-  border-radius:6px;
+  padding: 3px 8px;
+  border-radius: 6px;
 
-  font-size:0.7rem;
-  opacity:0.9;
+  font-size: 0.7rem;
+  opacity: 0.9;
 }
 
-.project-viewer{
+.project-viewer {
+  position: fixed;
+  inset: 0;
 
-  position:fixed;
-  inset:0;
+  background: rgba(0, 0, 0, 0.85);
 
-  background:rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  z-index:1000;
+  z-index: 1000;
 }
 
-.viewer-card{
+.viewer-card {
+  width: 60%;
+  max-width: 1100px;
 
-  width:60%;
-  max-width:1100px;
+  background: #111;
+  border-radius: 14px;
 
-  background:#111;
-  border-radius:14px;
-
-  overflow:hidden;
-  position:relative;
+  overflow: hidden;
+  position: relative;
 }
 
-.viewer-card img{
-  width:100%;
-  display:block;
+.viewer-card img {
+  width: 100%;
+  display: block;
 }
 
-.viewer-footer{
-  padding:1.2rem;
+.viewer-footer {
+  padding: 1.2rem;
 }
 
-.close-btn{
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
 
-  position:absolute;
-  top:10px;
-  right:15px;
+  border: none;
+  background: none;
 
-  border:none;
-  background:none;
-
-  color:#f39c12;
-  font-size:22px;
-  cursor:pointer;
+  color: #f39c12;
+  font-size: 22px;
+  cursor: pointer;
 }
 
 @media (max-width: 992px) {

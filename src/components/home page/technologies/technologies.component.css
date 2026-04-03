@@ -1,6 +1,7 @@
 .technologies-section {
   background: #000;
   color: #fff;
+
   scroll-margin-top: 100px;
   min-height: calc(100vh - 70px);
 
@@ -9,10 +10,6 @@
   justify-content: center;
 
   padding: 2rem;
-
-  font-family: var(--fluent-font-family, "Segoe UI", sans-serif);
-
-  scroll-margin-top: 90px;
 }
 
 .technologies-container {
@@ -22,6 +19,7 @@
 }
 
 .section-title {
+  margin-top: 30px;
   font-size: clamp(2.5rem, 4vw, 3.5rem);
   font-weight: 700;
 
