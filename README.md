@@ -1,10 +1,18 @@
-# MY WEB RESUME V1 (Still in development mode)
+# MY WEB RESUME V2 (Still in development mode)
 
 ## ⚠️ THIS PROJECT IS FOR PERSONAL PORTFOLIO USE ONLY. PLEASE DO NOT REUSE OR REDISTRIBUTE ANY PART OF THIS CODE.
 
-## ABOUT
-This project, as the name suggests, is a web resume.  
-It is an Angular single-page web application created with Angular and Node.js.
+## ABOUT:
+
+Web Resume V2 is a modern single-page application built with Angular.
+It is an upgraded version of my previous resume project, designed to better showcase:
+
+* My technical skills
+* My freelance work
+* My UI/UX improvements
+
+The goal is to provide an interactive and dynamic alternative to a traditional resume.
+You can still access the old V1 version by switching to the `dev_branch` branch.
 
 ## SPECS:
 
