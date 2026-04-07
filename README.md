@@ -51,6 +51,3 @@ You can still access the old V1 version by switching to the `dev_branch` branch.
 
 ![ScreenShot08](/src/assets/Sreenshot08.png)
 
-![ScreenShot09](/src/assets/Sreenshot09.png)
-
-
