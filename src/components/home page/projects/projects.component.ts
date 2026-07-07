@@ -28,6 +28,11 @@ export class ProjectsComponent implements OnInit {
       tech: ['Angular', 'Node.js', 'PostgreSQL'],
       image: 'assets/PRJ-03.png',
     },
+    {
+      name: 'ANASOL LAB website & dashboard',
+      tech: ['Angular', 'Node.js', 'PostgreSQL'],
+      image: 'assets/PRJ-04.png',
+    },
   ];
 
   openProject(project:any){
